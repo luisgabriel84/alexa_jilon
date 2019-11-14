@@ -9,10 +9,13 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     less = require('gulp-less'),
     csso = require('gulp-csso'),
+    uglify = require('gulp-uglify'),
     htmlmin = require('gulp-htmlmin');
     
 
 var modules = path.join(__dirname,'node_modules');
+var owlcarousel = path.join(modules,'owl.carousel','dist');
+var jquery = path.join(modules,'jquery','dist');
 
 //Copiar imágenes a la carpeta de distribución
   gulp.task('copyimg', function() {
@@ -20,12 +23,27 @@ var modules = path.join(__dirname,'node_modules');
         .pipe(gulp.dest(distFolder + '/img/'));
 });
 //Minificar archivos javascript
+//Minificar archivos javascript
 gulp.task('javascript', function() {
+
+    return gulp.src(
+        [
+            path.join( jquery , 'jquery.min.js'),
+            path.join( owlcarousel , 'owl.carousel.js'),
+            path.join( './src/js/', 'carousels.js'),
+
+        ])
+        .pipe(plumber())
+        .pipe(concat('scripts.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(distFolder + './js/'));
 });
 
 gulp.task('less', function () {
     return gulp.src(
         [
+            path.join(owlcarousel,'assets','owl.carousel.min.css'),
+            path.join(owlcarousel,'assets','owl.theme.default.min.css'),
             './src/less/styles.less'
         ]
     )

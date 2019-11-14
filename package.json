@@ -27,6 +27,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-server-livereload": "^1.9.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "node-sass": "^4.13.0",
     "owl.carousel": "^2.3.4",
     "path": "^0.12.7"
