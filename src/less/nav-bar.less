@@ -1,0 +1,109 @@
+header{
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flex;
+    display:-o-flex;
+    display:flex;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    
+}
+nav{
+    position: absolute;
+    background: @nav-color;
+    font-size:18px;
+    color: @white;
+    width: 100%;
+}
+.logo{
+    margin-right:auto;
+    z-index: 2;
+    max-height: 40px;
+}
+nav > ul{
+    position:relative;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flex;
+    display:-o-flex;
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+    margin:0 auto;
+    padding:0;
+}
+nav ul li{
+    color:@white;
+    list-style:none;
+    transition:0.5s;
+}
+nav a{
+    display:block;
+    color:@white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul img{
+    width:100%;
+}
+
+nav > ul> li > a{
+    padding: 15px 25px;
+    font-family: @oswald;
+    font-weight: 400;
+}
+nav > ul> li.dropdown > a:after{
+    position: relative;
+    float:right;
+    content:'';
+    margin-top:8px;
+}
+
+nav > ul > li:hover{
+    
+}
+nav ul.menu-area{
+    padding:20px 20px;
+    background: @black;
+    text-align: left;
+    z-index:1;
+    position: absolute;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flex;
+    display:-o-flex;
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    top:-9999px;
+    left:0;
+}
+nav ul li:hover ul.menu-area{
+    top:100%;
+}
+nav ul.menu-area ul{
+    width:20%;
+    margin-bottom:40px;
+    color: @white;
+}
+nav ul.menu-area h4{
+    margin-bottom:15px;
+    text-transform:uppercase;
+    font-family: @oswald;
+    font-weight: 600;
+}
+nav ul.menu-area ul li{
+    display: block;
+}
+nav ul.menu-area ul li a{
+    margin-top:10px;
+    color: @white;
+    text-transform: none;
+    font-family: @oswald;
+    font-weight: 300;
+
+}
+nav ul.menu-area ul li a:hover{
+    color:gray;
+}
