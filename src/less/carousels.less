@@ -27,5 +27,39 @@
             margin:auto ;
         }
     }
+    .owl-prev, .owl-next {
+        width: 15px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block !important;
+        border:0px solid black;
+    }
+    .owl-prev { left: 0px; }
+    .owl-next { right: 56px; }
+    .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+    
+
+    .owl-dots{
+        position:absolute;
+        left:50%;
+        top:90%;
+        transform:translate(-50%,-90%);
+
+    }
+    .owl-dot{
+        width:10px;
+        height:10px;
+        border:1px solid @white !important;
+        background-color: @gold-1 !important;
+        border-radius: 5px;
+        margin:0 3px;
+
+    }
+    .active{
+        background-color:@black !important;
+    }
+
 
 }
