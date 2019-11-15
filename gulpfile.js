@@ -10,6 +10,8 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     csso = require('gulp-csso'),
     uglify = require('gulp-uglify'),
+    autoprefixer = require('autoprefixer'),
+    postcss = require('gulp-postcss'),
     htmlmin = require('gulp-htmlmin');
     
 
@@ -49,7 +51,9 @@ gulp.task('less', function () {
     )
     .pipe(plumber())
     .pipe(concat('styles.css'))
+
     .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(less({
         paths: [ path.join(__dirname, 'less', 'includes') ]
       }))
