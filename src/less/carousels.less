@@ -1,5 +1,8 @@
 .home-slider{
     z-index: 0;
+    @media (max-width: @small) {
+        min-height: 400px;
+    }
     .collection-item{
         &__label{
             position: absolute;
@@ -71,7 +74,10 @@
         text-align: center;
         margin: auto;
         border:1px solid @gold-1;
-        padding: 20px;
+        padding:4%;
+        @media (max-width: @small) {
+            width: 50%;
+        }
     }
     .owl-prev, .owl-next {
         width: 10px;

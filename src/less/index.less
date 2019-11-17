@@ -7,7 +7,7 @@
     background-position-x: 50%;
     .info-box{
         background-color: @infobox-color;
-        padding: 40px;
+        padding: 5%;
         color:@white;
         position: absolute;
         bottom: 0;
@@ -19,6 +19,9 @@
             font-family: @futura-light;
             width: 35%;
             font-size: 12px;
+            @media (max-width: @small) {
+                width: 100%;
+            }
         }
     }
 }
@@ -47,6 +50,14 @@
     top:50%;
     transform:translate(-50%,-50%);
     width: 50%;
+    @media (max-width: @tablet) {
+        width: 70%;
+    }
+
+    @media (max-width: @small) {
+        width: 80%;
+    }
+
     h4{
         color:@gold-2;
         text-transform: uppercase;
@@ -60,6 +71,10 @@
         margin-top: 20px;
         font-size: 30px;
         color:@gold-1;
+        @media (max-width: @small) {
+            margin-top: 10px;
+            font-size: 20px;
+        }
     }
     &__label{
         font-family: @futura-light;

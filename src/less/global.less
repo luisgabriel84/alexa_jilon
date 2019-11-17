@@ -14,8 +14,19 @@ body{
 }
 .row{
     display: flex;
+    @media (max-width: @small) {
+            flex-direction: column;
+    }
+
     &--index{
-        height: 595px;
+        min-height: 595px;
+        @media (max-width: @tablet) {
+            min-height: 500px;
+        }
+        @media (max-width: @small) {
+            min-height: 895px;
+        }
+
         &:nth-child(even){
             div:first-child{
                 order: 2;
@@ -23,6 +34,9 @@ body{
             }
             div:nth-child(2){
                 order: 1;
+                @media (max-width: @small) {
+                    order: 2;
+                }
             }
             .text-wrapper{
                 float:right;
