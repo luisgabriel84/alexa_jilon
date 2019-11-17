@@ -19,14 +19,19 @@ body{
         &:nth-child(even){
             div:first-child{
                 order: 2;
+
             }
             div:nth-child(2){
                 order: 1;
+            }
+            .text-wrapper{
+                float:right;
             }
         }
     }
     &__column-index, &__column-footer{
         flex:1;
+        position: relative;
     }
 
     
@@ -42,4 +47,15 @@ body{
     margin:auto;
     border:1px solid @gold-1;
     font-size:12px;
+    &--whatsapp{
+        font-size:14px;
+     i{
+         font-weight: bold;
+         font-size: 20px;
+     }  
+    }
+    &--colections{
+        text-align: center !important;
+        margin-top:30px;
+    }
 }

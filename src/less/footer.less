@@ -1,13 +1,108 @@
 footer{
     background-color: @black;
-    height: 300px;
+    height: 400px;
+    padding: 30px 70px; 
     .row{
+        margin-top:30px;
         &__column-footer{
             color:@white;
         }
     }
+    .footer__icon{
+        width: 20px;
+    }
+    h5{
+        font-family: @futura;
+        font-weight: normal;
+        font-size: 16px;
+    }
 
-    .logo{
+    .footer-logo{
         text-align: center;
+        
+        img{
+            max-width: 140px;
+        };
+    }
+    .footer-info{
+        font-family: @futura-light;
+        font-size: 13px;
+        margin-bottom: 10px;
+        margin-top:15px;
+        font-weight: normal;
+        line-height: 15px;
+        padding:10px;
+        div{
+            margin-bottom: 10px;
+        }
+
+        li{
+            list-style-type: none;
+            line-height: 15px;
+            font-size:15px;
+            display: flex;
+            align-items: center;
+            padding:7px 0px;
+            
+            .icon{
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                background-size: contain;
+                margin-right: 7px;
+               &--facebook{
+                background-image: url('/img/facebook_19.jpg');
+               }
+               &--instagram{
+                background-image: url('/img/instagram_19.jpg');
+               }
+               &--pinterest{
+                background-image: url('/img/pinterest_19.jpg');
+               }
+               &--pin{
+                background-image: url('/img/pin_19.jpg');
+               }
+               &--phone{
+                background-image: url('/img/phone_19.jpg');
+               }
+               &--address{
+                background-image: url('/img/direccion_19.jpg');
+               }
+               &--email{
+                background-image: url('/img/mail_19.jpg');
+               }
+            }
+            a{
+                color:@white;
+                text-decoration: none;
+                line-height: 30px;
+                font-size:15px;
+               
+                &:hover{
+                    text-decoration: underline;
+                    color: @gold-1;
+                }
+            }
+        }
+        .subscribe-form{
+            display: flex;
+            input, button{
+                height: 40px;
+                border: none;
+                
+            }
+            input{
+                padding: 10px;
+                width: 200px;
+                color:@nobel;
+            }
+            button{
+                width: 80px;
+                color:@white;
+                background-color: @gold-2;
+                border: none;
+            }
+        }
+
     }
 }

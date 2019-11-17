@@ -5,10 +5,25 @@
     -o-background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 50%;
+    .info-box{
+        background-color: @infobox-color;
+        padding: 40px;
+        color:@white;
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+        border-top: 1px solid @gold-2;
+        text-align: justify;
+        width: 100%;
+        .text-wrapper{
+            font-family: @futura-light;
+            width: 35%;
+            font-size: 12px;
+        }
+    }
 }
 .promo{
     background-image: url(/img/promo.jpg);
-    
 }
 .gold-line{
     background-image: url(/img/gold-line.jpg);
@@ -22,4 +37,68 @@
 }
 .urban{
     background-image: url(/img/urban.jpg);
+}
+
+.mini-slider{
+    position: absolute;
+    padding: 30px 0px;
+    text-align: center;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width: 50%;
+    h4{
+        color:@gold-2;
+        text-transform: uppercase;
+       
+    }
+    &__title{
+        font-family: @futura-light;
+        margin:5px 0px 10px 0px;
+    }
+    &__price{
+        margin-top: 20px;
+        font-size: 30px;
+        color:@gold-1;
+    }
+    &__label{
+        font-family: @futura-light;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+}
+
+
+.slider-instagram{
+    height: 350px;
+    padding: 20px 40px;
+    background-color: #f7f7f7;
+    text-align: center;
+    margin-top: 10px;
+    &__title{
+        text-align: center;
+        max-width: 250px;
+        
+        margin:auto;
+        h5{
+            font-size:25px;
+            line-height: 30px;
+            font-weight: normal;
+            border-bottom: 3px solid @gold-1;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+
+    }
+    &__carousel{
+        .instagram-thumb{
+            img{
+                margin-bottom: 5px;
+            }
+            text-align: left;
+            font-family: @futura-light;
+            font-size:12px;
+        }
+    }
 }

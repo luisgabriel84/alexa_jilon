@@ -18,6 +18,8 @@ var gulp = require('gulp'),
 var modules = path.join(__dirname,'node_modules');
 var owlcarousel = path.join(modules,'owl.carousel','dist');
 var jquery = path.join(modules,'jquery','dist');
+var fontawesome = path.join(modules,'@fortawesome','fontawesome-free');
+
 
 //Copiar imágenes a la carpeta de distribución
   gulp.task('copyimg', function() {
@@ -46,6 +48,7 @@ gulp.task('less', function () {
         [
             path.join(owlcarousel,'assets','owl.carousel.min.css'),
             path.join(owlcarousel,'assets','owl.theme.default.min.css'),
+           
             './src/less/styles.less'
         ]
     )
