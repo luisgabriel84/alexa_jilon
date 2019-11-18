@@ -21,14 +21,18 @@ $(document).ready(function(){
         margin:20,
         responsive:{
             0:{
-                items:1,
+                items:2,
                 dotsEach: 2,
                
             },
             600:{
-                items:1,
+                items:3,
                 dotsEach: 2,
             },
+            800:{
+                items:6,
+                dotsEach: 2,
+            }
 
         },
         onTranslate: function() {
