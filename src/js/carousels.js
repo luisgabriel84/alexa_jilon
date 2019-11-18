@@ -18,7 +18,24 @@ $(document).ready(function(){
         items:6,
         nav:false,
         loop: true,
-        margin:20
+        margin:20,
+        responsive:{
+            0:{
+                items:1,
+                dotsEach: 2,
+               
+            },
+            600:{
+                items:1,
+                dotsEach: 2,
+            },
+
+        },
+        onTranslate: function() {
+            $('.owl-item').find('video').each(function() {
+                this.pause();
+            });
+        }
        
     });
 
