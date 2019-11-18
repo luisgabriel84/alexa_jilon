@@ -23,6 +23,10 @@ nav{
     max-height: 68px;
     margin-left: 40px;
     margin-bottom: 10px;
+    @media screen and (max-width: @small) {
+        max-height: 47px;
+    }
+    
 }
 nav > ul{
     position:relative;
@@ -103,4 +107,33 @@ nav ul.menu-area ul li a{
 }
 nav ul.menu-area ul li a:hover{
     color:gray;
+}
+.slicknav_menu {
+    display:none;
+}
+@media screen and (max-width: 40em) {
+    /* #menu is the original menu */
+    .slicknav_btn{
+        background-color:@black;
+    }
+    .res-menu{
+        display: none;
+    }
+    .slicknav_menu {
+        display: block;
+        background: transparent;
+        position: absolute;
+        z-index: 1000;
+        right: 0;
+        width: 100%;
+        margin-top: 1%;
+    }
+    .slicknav_nav{
+        background: @black;
+
+    }
+    .slicknav_menu .slicknav_icon-bar{
+
+    }
+
 }

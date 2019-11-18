@@ -24,7 +24,10 @@ body{
             min-height: 500px;
         }
         @media (max-width: @small) {
-            min-height: 895px;
+          
+        }
+        @media (max-width: @extra-small) {
+            min-height: 1200px;;
         }
 
         &:nth-child(even){
@@ -40,6 +43,10 @@ body{
             }
             .text-wrapper{
                 float:right;
+
+                @media (max-width: @small) {
+                    float: none;
+                }
             }
         }
     }

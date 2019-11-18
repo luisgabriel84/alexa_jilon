@@ -26,15 +26,17 @@ var fontawesome = path.join(modules,'@fortawesome','fontawesome-free');
     return gulp.src('src/img/*')
         .pipe(gulp.dest(distFolder + '/img/'));
 });
-//Minificar archivos javascript
+
 //Minificar archivos javascript
 gulp.task('javascript', function() {
 
     return gulp.src(
         [
-            path.join( jquery , 'jquery.min.js'),
+            //path.join( jquery , 'jquery.min.js'),
             path.join( owlcarousel , 'owl.carousel.js'),
             path.join( './src/js/', 'carousels.js'),
+            path.join( './src/js/', 'jquery.slicknav.min.js'),
+            './src/js/navigation.js',
 
         ])
         .pipe(plumber())
@@ -48,6 +50,7 @@ gulp.task('less', function () {
         [
             path.join(owlcarousel,'assets','owl.carousel.min.css'),
             path.join(owlcarousel,'assets','owl.theme.default.min.css'),
+            './src/less/slicknav.min.css',
            
             './src/less/styles.less'
         ]
