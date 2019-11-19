@@ -77,6 +77,7 @@ gulp.task('watch', () => {
     //pages
     gulp.watch('src/partials/**/*.html', gulp.series('index'));
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
+    gulp.watch('src/partials/**/*.html', gulp.series('contacto'));
 });
 
 
@@ -108,6 +109,19 @@ gulp.task('alexa', function() {
         .pipe(gulp.dest(distFolder));
 });
 
+// Contacto
+gulp.task('contacto', function() {
+    return gulp.src([
+        './src/partials/_header.html',
+        './src/partials/_top-navigation.html',
+        './src/partials/_contacto.html',
+        './src/partials/_footer.html',
+        ])
+        .pipe(plumber())
+        .pipe(concat('contacto.html'))
+      
+        .pipe(gulp.dest(distFolder));
+});
 //Iniciar el servidor web
 gulp.task('webserver', function() {
     gulp.src(distFolder)
