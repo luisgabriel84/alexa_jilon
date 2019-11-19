@@ -48,7 +48,7 @@ body{
             }
         }
     }
-    &__column-index, &__column-footer{
+    &__column-index, &__column-footer,&__column-alexa{
         flex:1;
         position: relative;
     }
@@ -77,4 +77,44 @@ body{
         text-align: center !important;
         margin-top:30px;
     }
+}
+.responsive-img{
+    width: 100%;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    margin-right: 7px;
+   &--facebook{
+    background-image: url('/img/facebook_19.jpg');
+    &--white{
+        background-image: url('/img/icons_facebook.png');
+    }
+   }
+   &--instagram{
+    background-image: url('/img/instagram_19.jpg');
+    &--white{
+        background-image: url('/img/icons_instagram.png');
+    }
+   }
+   &--pinterest{
+    background-image: url('/img/pinterest_19.jpg');
+    &--white{
+        background-image: url('/img/icons_pinterest.png');
+    }
+   }
+   &--pin{
+    background-image: url('/img/pin_19.jpg');
+   }
+   &--phone{
+    background-image: url('/img/phone_19.jpg');
+   }
+   &--address{
+    background-image: url('/img/direccion_19.jpg');
+   }
+   &--email{
+    background-image: url('/img/mail_19.jpg');
+   }
 }

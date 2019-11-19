@@ -73,7 +73,10 @@ gulp.task('watch', () => {
     gulp.watch('src/less/**/*.less', gulp.series('less'));
     gulp.watch('src/js/**/*', gulp.series('javascript'));
     gulp.watch('src/img/*', gulp.series('copyimg'));
+
+    //pages
     gulp.watch('src/partials/**/*.html', gulp.series('index'));
+    gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
 });
 
 
@@ -87,6 +90,20 @@ gulp.task('index', function() {
         ])
         .pipe(plumber())
         .pipe(concat('index.html'))
+      
+        .pipe(gulp.dest(distFolder));
+});
+
+// Alexa
+gulp.task('alexa', function() {
+    return gulp.src([
+        './src/partials/_header.html',
+        './src/partials/_top-navigation.html',
+        './src/partials/_alexa.html',
+        './src/partials/_footer.html',
+        ])
+        .pipe(plumber())
+        .pipe(concat('alexa-jilon.html'))
       
         .pipe(gulp.dest(distFolder));
 });
