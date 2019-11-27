@@ -77,7 +77,7 @@ gulp.task('watch', () => {
     //pages
     gulp.watch('src/partials/**/*.html', gulp.series('index'));
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
-    gulp.watch('src/partials/**/*.html', gulp.series('contacto'));
+    gulp.watch('src/partials/**/*.html', gulp.series('interna'));
 });
 
 
@@ -119,6 +119,20 @@ gulp.task('contacto', function() {
         ])
         .pipe(plumber())
         .pipe(concat('contacto.html'))
+      
+        .pipe(gulp.dest(distFolder));
+});
+
+// Business line
+gulp.task('interna', function() {
+    return gulp.src([
+        './src/partials/_header.html',
+        './src/partials/_top-navigation.html',
+        './src/partials/_business_line.html',
+        './src/partials/_footer.html',
+        ])
+        .pipe(plumber())
+        .pipe(concat('interna.html'))
       
         .pipe(gulp.dest(distFolder));
 });

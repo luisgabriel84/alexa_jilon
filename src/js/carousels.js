@@ -35,13 +35,31 @@ $(document).ready(function(){
             }
 
         },
-        onTranslate: function() {
-            $('.owl-item').find('video').each(function() {
-                this.pause();
-            });
-        }
+
        
     });
+
+    $(".business-line-slider__carousel").owlCarousel({
+        nav:true,
+        loop: true,
+        navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
+        responsive:{
+            0:{
+                items:1,
+                dotsEach: 2,
+               
+            },
+            600:{
+                items:1,
+                dotsEach: 2,
+            },
+            800:{
+                items:3,
+                dotsEach: 2,
+            }
+
+        },
+    })
 
 
     

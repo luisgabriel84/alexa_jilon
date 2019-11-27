@@ -152,3 +152,52 @@
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
 }
+.business-line-slider {
+
+    &__image{
+        width: 60%;
+        text-align: center;
+        margin: auto;
+        border:1px solid @gold-1;
+        padding:4%;
+        @media (max-width: @small) {
+            width: 85%;
+        }
+    }
+    &__title{
+        font-family: "Futura Light";
+        margin: 5px 0 10px;
+    }
+    &__price{
+        font-family: "Futura Light";
+        margin-top: 4px;
+        font-size: 25px;
+        color:@gold-1;
+        font-weight: bold;
+
+    }
+    
+    &__carousel{
+        .owl-prev, .owl-next {
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            display: block !important;
+            
+        }
+        .owl-nav{
+            img{
+                width: 35px;
+            }
+        }
+    
+        .owl-next:focus, .owl-prev:focus {outline: none;}
+        .owl-prev { left: -20px; }
+        .owl-next { right: 10px; }
+        .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+    }
+
+
+}
