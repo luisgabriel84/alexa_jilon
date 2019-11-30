@@ -8,8 +8,8 @@ header{
     width: 100%;
     align-items: center;
     z-index: 100;
-    
     background: @nav-color;
+    min-height: 100px;
     #logo-link{
         z-index: 4;
     }
@@ -50,6 +50,7 @@ nav a{
     color:@white;
     text-decoration: none;
     text-transform: uppercase;
+   
 }
 ul img{
     width:100%;
@@ -60,9 +61,13 @@ ul img{
 }
 
 nav > ul> li > a{
-    padding: 15px 25px;
-    font-family: @futura-light;
-    font-weight: 400;
+    padding: 40px 25px;
+    font-family: @futura-light-bt;
+    font-size: 15px;
+    &:hover{
+        color:@gold-1;
+       
+    }
 }
 nav > ul> li.dropdown > a:after{
     position: relative;
@@ -74,7 +79,7 @@ nav > ul> li.dropdown > a:after{
 
 nav ul.menu-area{
     padding:20px 20px;
-    background: @black;
+    background: @dropdown-menu-color;
     text-align: left;
     z-index:1;
     position: absolute;
@@ -87,9 +92,11 @@ nav ul.menu-area{
     width:100%;
     top:-9999px;
     left:0;
+    align-items: center;
 }
 nav ul li:hover ul.menu-area{
     top:100%;
+  
 }
 nav ul.menu-area ul{
     width:20%;
@@ -99,8 +106,9 @@ nav ul.menu-area ul{
 nav ul.menu-area h4{
     margin-bottom:15px;
     text-transform:uppercase;
-    font-family: @futura-light;
-    font-weight: 600;
+    font-family: @futura-md-bt;
+    color: @gold-1;
+    font-size: 17px;
 }
 nav ul.menu-area ul li{
     display: block;
@@ -109,12 +117,13 @@ nav ul.menu-area ul li a{
     margin-top:10px;
     color: @white;
     text-transform: none;
-    font-family: @futura-light;
-    font-weight: 300;
+    font-family: @futura-light-bt;
+    font-size: 15px;
+
 
 }
 nav ul.menu-area ul li a:hover{
-    color:gray;
+    color:@gold-1;
 }
 .slicknav_menu {
     display:none;

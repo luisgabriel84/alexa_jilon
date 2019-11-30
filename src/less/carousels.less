@@ -22,10 +22,12 @@
             h3{
                 color:@white;
                 border: 1px solid @white;
-                font-size: 30px;
+                font-size: 32px;
                 text-transform: uppercase;
-                padding: 5px 15px;
+                padding: 15px 35px;
                 margin-bottom: 20px;
+                background-color: @infobox-color;
+                font-family: @futura;
                 @media (max-width: @small) {
                     font-size: 15px;
                 }
@@ -33,10 +35,10 @@
         }
         &__smalltext{
             background-color: @white;
-            font-family: @futura-light;
-            font-size: 9px;
+            font-family: @futura-md-bt;
+            font-size: 12px;
             text-transform: uppercase;
-            padding: 4px 0px;
+            padding: 5px;
             font-weight: bold;
             max-width: 85px;
             margin:auto ;
@@ -80,16 +82,17 @@
 
     }
     .owl-dot{
-        width:10px;
-        height:10px;
+        width:15px;
+        height:15px;
         border:1px solid @white !important;
-        background-color: @gold-1 !important;
-        border-radius: 5px;
+        background-color: @black !important;
+        border-radius: 10px;
         margin:0 3px;
+        outline: none;
 
     }
     .active{
-        background-color:@black !important;
+        background-color:@gold-1 !important;
     }
 
 
@@ -102,7 +105,7 @@
         text-align: center;
         margin: auto;
         border:1px solid @gold-1;
-        padding:4%;
+        padding:3%;
         @media (max-width: @small) {
             width: 85%;
         }
@@ -152,7 +155,7 @@
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
 }
-.business-line-slider {
+.business-line-slider, .detail__carousel {
 
     &__image{
         width: 60%;

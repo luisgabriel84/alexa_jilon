@@ -59,8 +59,30 @@ $(document).ready(function(){
             }
 
         },
+    });
+    $(".detail__carousel").owlCarousel({
+        nav:false,
+        loop: true,
+        navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
+        responsive:{
+            0:{
+                items:3,
+                dotsEach: 2,
+               
+            },
+            600:{
+                items:3,
+                dotsEach: 2,
+            },
+            800:{
+                items:3,
+                dotsEach: 2,
+            }
+
+        },
     })
 
 
     
   });
+
