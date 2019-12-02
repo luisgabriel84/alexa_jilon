@@ -20,10 +20,11 @@
         &--small{
             font-family: @futura-light;
             margin-bottom: 2px;
+            font-size: 20px;
         }
         &--large{
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 45px;
         }
         &--flex{
             display: flex;
@@ -81,10 +82,17 @@
     &__slider{
         background-color: @gray-sliders;
         text-align: center;
-        min-height: 400px;
+     
         padding: 20px 40px;
+
+        @media (min-width: @tablet ){
+            min-height: 630px;
+        }
         .slider-title{
-            margin-bottom: 20px;
+            margin: 40px 0;
+            &--inspiraciones{
+                font-size: 26px;
+            }
         }
         &--white{
             background-color: @white;

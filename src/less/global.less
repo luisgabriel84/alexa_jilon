@@ -46,13 +46,36 @@ body{
                     float: none;
                 }
             }
+            .cover{
+                &__header{
+                    @media (min-width: @tablet) {
+                    padding-left: 70px;
+                    }
+                    @media (max-width: @small) {
+                        padding-left:15px;
+                    }
+                }
+            }
         }
         &:nth-child(odd){
+
             .text-wrapper{
                 float:right;
 
                 @media (max-width: @small) {
                     float: none;
+                }
+            }
+            .cover{
+                &__header{
+                  text-align: right;
+                  @media (max-width: @small) {
+                    padding-right:15px;
+                  }
+
+                  @media (min-width: @tablet) {
+                    padding-right:70px;
+                  }
                 }
             }
 

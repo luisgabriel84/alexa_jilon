@@ -27,6 +27,34 @@
             }
         }
     }
+
+    &__header{
+        position:absolute;
+        height: 50%;
+        width: 100%;
+        margin-top: 12%;
+    }
+    &__logo{
+        img{
+            max-width: 245px;
+            @media (max-width: @small) {
+                max-width: 195px;
+                margin-top: 16%;
+            }
+        }
+    }
+
+    &__title{
+        color:@white;
+        font-size: 35px;
+        line-height: 35px;
+        &__first-line{
+            font-family: @futura-light-bt;
+        }
+        &__second-line{
+            font-family: @futura-md-bt;
+        }
+    }
 }
 .promo{
     background-image: url(/img/promo.jpg);
