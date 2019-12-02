@@ -144,14 +144,19 @@
     
         }
         .owl-dot{
-            width:8px;
-            height:8px;
+            width:15px;
+            height:15px;
             border:1px solid @white !important;
-            background-color: @gold-1 !important;
-            border-radius: 5px;
+            background-color: @black !important;
+            border-radius: 10px;
             margin:0 3px;
+            outline: none;
+            &.active{
+                background-color:@gold-1 !important;
+            }
     
         }
+
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
 }

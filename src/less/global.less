@@ -105,13 +105,15 @@ body{
 }
 .responsive-img{
     width: 100%;
+    display: block;
 }
 .icon{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     background-size: contain;
     margin-right: 7px;
+    background-repeat: no-repeat;
    &--facebook{
     background-image: url('/img/facebook_19.jpg');
     &--white{
@@ -131,15 +133,21 @@ body{
     }
    }
    &--pin{
-    background-image: url('/img/pin_19.jpg');
+    background-image: url('/img/pin.svg');
    }
    &--phone{
-    background-image: url('/img/phone_19.jpg');
+    background-image: url('/img/phone.svg');
    }
    &--address{
-    background-image: url('/img/direccion_19.jpg');
+    background-image: url('/img/cursor.svg');
    }
    &--email{
-    background-image: url('/img/mail_19.jpg');
+    background-image: url('/img/mail.svg');
    }
+}
+.slicknav_nav .slicknav_row:hover, .slicknav_nav a:hover{
+    background-color: @gold-1 !important;
+}
+.slicknav_nav h4{
+    color:@gold-1;
 }

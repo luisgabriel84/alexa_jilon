@@ -9,7 +9,9 @@ header{
     align-items: center;
     z-index: 100;
     background: @nav-color;
-    min-height: 100px;
+    @media screen and (min-width: @computer) {
+        min-height: 100px;
+    }
     #logo-link{
         z-index: 4;
     }
@@ -23,13 +25,19 @@ nav{
 .logo{
     margin-right:auto;
     z-index: 2;
-    max-height: 68px;
-    margin-left: 40px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+
+    @media screen and (min-width: @computer) {
+        max-height: 68px;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
     @media screen and (max-width: @small) {
         max-height: 47px;
+        margin-bottom:3px;
+        margin-top: 1px;
     }
+
     
 }
 nav > ul{
@@ -149,11 +157,13 @@ nav ul.menu-area ul li a:hover{
     }
     .slicknav_nav{
         background: @nav-color;
+        @media (max-width: @small) {
+            background: @nav-color-mobile;
+        }
 
     }
     .slicknav_nav .slicknav_row, .slicknav_nav a {
         padding: 5px 10px;
         margin: 14px 5px;
     }
-
 }
