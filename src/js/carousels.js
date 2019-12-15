@@ -3,6 +3,9 @@ $(document).ready(function(){
         items:1,
         nav:true,
         loop: true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        mouseDrag:false,
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />']
     });
 

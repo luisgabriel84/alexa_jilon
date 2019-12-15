@@ -41,6 +41,11 @@ body{
             }
             .text-wrapper{
                 float:left;
+                text-align: left;
+                .black-button{
+                    margin:none;
+                    left:0;
+                }
 
                 @media (max-width: @small) {
                     float: none;
@@ -61,6 +66,13 @@ body{
 
             .text-wrapper{
                 float:right;
+                text-align: right;
+                .black-button{
+                  
+                            float:right;
+               
+                   
+                }
 
                 @media (max-width: @small) {
                     float: none;
@@ -93,9 +105,9 @@ body{
     background-color: @black;
     color: @gold-1;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px;
     text-transform: uppercase;
-    max-width: 200px;
+    width: 200px;
     margin:auto;
     border:1px solid @gold-1;
     font-size:13px;
@@ -106,6 +118,7 @@ body{
     }
     &--whatsapp{
         font-size:13px;
+        font-family: @futura-md-bt;
      i{
 
          font-size: 20px;
@@ -113,7 +126,7 @@ body{
     }
     &--colections{
         text-align: center !important;
-        margin-top:50px;
+        margin:10% 0 0 0;
         &:hover{
             background-color: @gold-1;
             color:@black;

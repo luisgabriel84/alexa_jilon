@@ -36,7 +36,8 @@
     }
     &__logo{
         img{
-            max-width: 245px;
+            width: 298px;
+            height: 99px;
             @media (max-width: @small) {
                 max-width: 195px;
                 margin-top: 16%;
@@ -50,9 +51,13 @@
         line-height: 35px;
         &__first-line{
             font-family: @futura-light-bt;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         &__second-line{
             font-family: @futura-md-bt;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     }
 }
@@ -95,15 +100,20 @@
     h4{
         color:@gold-2;
         text-transform: uppercase;
+        font-size: 23px;
+        font-family: @futura-bold;
+        letter-spacing: 2px;
        
     }
     &__title{
-        font-family: @futura-light;
+        font-family: @futura-md-bt;
         margin:5px 0px 10px 0px;
+        font-size: 19px;
     }
     &__price{
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 35px;
+        font-family: @futura-md-bt;
         color:@gold-1;
         @media (max-width: @small) {
             margin-top: 10px;
@@ -111,9 +121,11 @@
         }
     }
     &__label{
-        font-family: @futura-light;
+        font-family: @futura-light-bt;
         padding: 10px;
         text-transform: uppercase;
+        font-size: 15px;
+        
     }
 }
 

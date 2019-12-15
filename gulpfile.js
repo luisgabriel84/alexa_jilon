@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    babel= require('gulp-babel');;
     
 
 var modules = path.join(__dirname,'node_modules');
@@ -36,9 +37,13 @@ gulp.task('javascript', function() {
             path.join( owlcarousel , 'owl.carousel.js'),
             path.join( './src/js/', 'carousels.js'),
             path.join( './src/js/', 'jquery.slicknav.min.js'),
+            './src/js/app.js',
             './src/js/navigation.js',
 
         ])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(plumber())
         .pipe(concat('scripts.js'))
         .pipe(uglify())
@@ -73,6 +78,7 @@ gulp.task('watch', () => {
     gulp.watch('src/less/**/*.less', gulp.series('less'));
     gulp.watch('src/js/**/*', gulp.series('javascript'));
     gulp.watch('src/img/*', gulp.series('copyimg'));
+
 
     //pages
     gulp.watch('src/partials/**/*.html', gulp.series('index'));

@@ -3,6 +3,13 @@
     @media (max-width: @small) {
         min-height: 400px;
     }
+    .owl-stage-outer{
+        @media (min-width: @computer) {
+            height: 100vh;
+        }
+       
+
+    }
     .collection-item{
 
         @media (max-width: @small) {
@@ -15,7 +22,7 @@
 
         &__label{
             position: absolute;
-            top: 75%;
+            top: 65%;
             left: 50%;
             text-align: center;
             transform: translate(-50%,-75%);
@@ -28,6 +35,7 @@
                 margin-bottom: 20px;
                 background-color: @infobox-color;
                 font-family: @futura;
+                letter-spacing: 2px;
                 @media (max-width: @small) {
                     font-size: 15px;
                 }
@@ -40,8 +48,9 @@
             text-transform: uppercase;
             padding: 5px;
             font-weight: bold;
-            max-width: 85px;
+            max-width: 120px;
             margin:auto ;
+            letter-spacing: 2px;
         }
         img{
             @media (max-width: @small) {
@@ -63,7 +72,11 @@
         }
         
     }
-    .owl-prev { left: 0px; }
+    .owl-prev { left: 0px;
+        &:hover{
+            left:100px;
+        }
+    }
     .owl-next { 
         right: 56px;            
         @media (max-width: @small) {
@@ -105,7 +118,7 @@
         text-align: center;
         margin: auto;
         border:1px solid @gold-1;
-        padding:3%;
+        padding:5%;
         @media (max-width: @small) {
             width: 85%;
         }
@@ -125,13 +138,12 @@
         }
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
-    .owl-prev { left: -20px; }
-    .owl-next { right: 10px; }
+    .owl-prev { left: 7%; }
+    .owl-next { right: 13%; }
     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
    
 
 }
-
 .slider-instagram{
     &__carousel{
         margin-top: 20px;

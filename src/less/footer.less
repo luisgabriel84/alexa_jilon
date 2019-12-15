@@ -24,6 +24,8 @@ footer{
         font-family: @futura-md-bt;
         font-size: 17px;
         margin-bottom: 10px;
+        letter-spacing: 2px;
+        color:@gold-1;
     }
 
     .footer-logo{
@@ -37,26 +39,31 @@ footer{
         };
     }
     .footer-info{
-        font-family: @futura-light;
-        font-size: 13px;
+        font-family: @futura-md-bt;
+        font-size: 14px;
         margin-bottom: 10px;
         margin-top:15px;
         font-weight: normal;
-        line-height: 15px;
+        line-height: 17px;
         padding:10px;
+        letter-spacing: 2px;
         div{
             margin-bottom: 10px;
         }
 
         li{
             list-style-type: none;
-            line-height: 15px;
-            font-size:12px;
+            line-height: 17px;
+            font-size: 17px;
             display: flex;
             align-items: center;
             padding:7px 0px;
             font-family: @futura-md-bt;
             color:@gray-sliders;
+            letter-spacing: 2px;
+            &:hover{
+                color:@gold-1;
+            }
             
             
             a{
@@ -95,6 +102,10 @@ footer{
                 font-family: @futura-light-bt;
                 @media (max-width: @extra-small) {
                     width: 100px;
+                }
+                &:hover{
+                    background-color: @gold-3;
+                    cursor: pointer;
                 }
             }
         }
