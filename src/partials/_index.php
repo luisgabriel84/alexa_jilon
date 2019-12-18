@@ -84,7 +84,7 @@ $obj = json_decode($json);
         <div class="cover__header">
 
             <div class="cover__logo">
-                <img src="<?php echo $category->acf->logo->url ?>" alt="" class="img-responsive">
+                <img src="<?php echo $category->acf->logo->url ?>" alt="" class="img-responsive" alt="Alexa Jilon" title="Alexa Jilon">
             </div>
             <div class="cover__title">
                 <div class="cover__title__first-line"><?php echo $category->name  ?> </div>
@@ -97,7 +97,7 @@ $obj = json_decode($json);
         <div class="info-box">
             <div class="text-wrapper">
             <?php echo $category->description  ?>
-                <a href="lineas-alexa-jilon.php?linea=<?php echo $category->slug  ?>" class="black-button black-button--colections ">Colecciones</a>
+                <a href="lineas-alexa-jilon.php?linea=<?php echo $category->slug  ?>&id=<?php echo $category->id ?>" class="black-button black-button--colections " alt="Colecciones <?php echo  $category->name ?>" title="Colecciones <?php echo  $category->name ?>">Colecciones</a>
             </div>
         </div>
 
@@ -129,7 +129,7 @@ $obj = json_decode($json);
                     <div>
                         <div class="mini-slider__title"><?php echo $post->title->rendered ?></div>
                         <div class="mini-slider__image"> 
-                            <a href="#"> <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt=""></a>
+                            <a href="vestido.php?slug=<?php echo $post->slug; ?>"> <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>"></a>
                         </div>
                         <div class="mini-slider__price">
                         <?php if($post->acf->precio): ?>

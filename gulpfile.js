@@ -84,7 +84,7 @@ gulp.task('watch', () => {
     gulp.watch('src/partials/**/*.php', gulp.series('index'));
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
     gulp.watch('src/partials/**/*.php', gulp.series('interna'));
-    gulp.watch('src/partials/**/*.html', gulp.series('detail-page'));
+    gulp.watch('src/partials/**/*.php', gulp.series('detail-page'));
     
 });
 
@@ -140,7 +140,7 @@ gulp.task('interna', function() {
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('colecciones.php'))
+        .pipe(concat('lineas-alexa-jilon.php'))
       
         .pipe(gulp.dest(distFolder));
 });
@@ -150,11 +150,11 @@ gulp.task('detail-page', function() {
     return gulp.src([
         './src/partials/_header.html',
         './src/partials/_top-navigation.html',
-        './src/partials/_detail-page.html',
+        './src/partials/_detail-page.php',
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('detalle.html'))
+        .pipe(concat('coleccion.php'))
       
         .pipe(gulp.dest(distFolder));
 });

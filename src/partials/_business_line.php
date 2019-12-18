@@ -1,20 +1,22 @@
 <?php 
 
-$slug = $_GET['slug'];
-print_r($slug);
-exit;
-$json = file_get_contents('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=swimwear');
-$category = json_decode($json);
+$linea = $_GET['linea'];
+$id =  $_GET['id'];
 
+$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$linea);
+$json = file_get_contents($url);
+$linea = json_decode($json);
 
+$colecciones_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%s',$id);
+
+$json_colecciones = file_get_contents($colecciones_url);
+$colecciones = json_decode($json_colecciones);
 ?>
-
-
 
 <section>
     <figure>
         <div class="business-line__top-banner">
-            <img src="img/banner-interna.jpg" alt="" class="responsive-img">
+            <img src="<?php echo $linea[0]->acf->banner->url ?>" alt="" class="responsive-img">
         </div>
     </figure>
 
@@ -25,7 +27,7 @@ $category = json_decode($json);
     <div class="business-line__content">
         <div class="business-line__breadcrumbs">
             <a href="/">Inicio</a> |
-            {Nombre línea}
+            <?php echo $linea[0]->name ?>
         </div>
 
         <div class="business-line__headers">
@@ -34,33 +36,27 @@ $category = json_decode($json);
                 ALEXA JILON
             </div>
             <div class="business-line__headers business-line__headers--large">
-                {Nombre de la linea}
+                <?php echo $linea[0]->name ?>
             </div>
         </div>
 
         <div class="business-line__collections">
-
-            <div class="business-line__collection">
-                <a href="/detalle.html">
-                    <img src="img/img_coleccion-decirtelo.jpg" alt="" class="responsive-img">
-                </a>
-            </div>
-
-            <div class="business-line__collection">
-                <a href="/detalle.html">
-                    <img src="img/img_coleccion-glamurosa.jpg" alt="" class="responsive-img">
-                </a>
-            </div>
-            <div class="business-line__collection">
-                <a href="/detalle.html">
-                    <img src="img/img_coleccion-nocheEstelar.jpg" alt="" class="responsive-img">
-                </a>
-            </div>
-            <div class="business-line__collection">
-                <a href="/detalle.html">
-                    <img src="img/img_coleccion-texturas.jpg" alt="" class="responsive-img">
-                </a>
-            </div>
+            <?php foreach($colecciones as $coleccion): 
+                    $cats[] =$coleccion->id;
+            
+                ?>
+                <div class="business-line__collection">
+                    <a href="coleccion.php?coleccion=<?php echo $coleccion->slug ?>">
+                        <img src="<?php echo $coleccion->acf->banner_de_coleccion->url ?>" alt="<?php echo $coleccion->name ?>" title="<?php echo $coleccion->name ?>" class="responsive-img">
+                    </a>
+                </div>
+            <?php endforeach;
+            
+           
+            $strCat = implode (",", $cats);
+            $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s',$strCat));
+            $posts = json_decode($json);
+            ?>
 
         </div>
 
@@ -73,63 +69,30 @@ $category = json_decode($json);
 
     <div class="business-line__slider">
         <div class="slider-title slider-title--inspiraciones">
-            Conoce más de nuestra Inspiración {Nombre de la línea}
+            Conoce más de nuestra Inspiración  <?php echo $linea[0]->name ?>
         </div>
         <div class="business-line-slider__carousel owl-carousel">
+        
+        
+            <?php foreach($posts as $post):?>
 
             <div>
 
                 <div class="business-line-slider__image">
-                    <img src="img/seda_11.jpg" alt="">
+                <a href="vestido.php?slug=<?php echo $post->slug; ?>">
+                    <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>">
+            </a>
                 </div>
-                <div class="business-line-slider__title">Vestido Azul</div>
-                <div class="business-line-slider__price">$200,000</div>
+                <div class="business-line-slider__title"><?php echo $post->title->rendered ?></div>
+                <div class="business-line-slider__price">
+                <?php if($post->acf->precio): ?>
+                            $<?php echo number_format($post->acf->precio,0,',',',') ?>
+                        <?php endif; ?>
+                </div>
 
 
             </div>
-
-            <div>
-
-                <div class="business-line-slider__image">
-                    <img src="img/seda_11.jpg" alt="">
-                </div>
-                <div class="business-line-slider__title">Vestido Azul</div>
-                <div class="business-line-slider__price">$200,000</div>
-
-
-            </div>
-            <div>
-
-                <div class="business-line-slider__image">
-                    <img src="img/seda_11.jpg" alt="">
-                </div>
-                <div class="business-line-slider__title">Vestido Azul</div>
-                <div class="business-line-slider__price">$200,000</div>
-
-
-            </div>
-            <div>
-
-                <div class="business-line-slider__image">
-                    <img src="img/seda_11.jpg" alt="">
-                </div>
-                <div class="business-line-slider__title">Vestido Azul</div>
-                <div class="business-line-slider__price">$200,000</div>
-
-
-            </div>
-            <div>
-
-                <div class="business-line-slider__image">
-                    <img src="img/seda_11.jpg" alt="">
-                </div>
-                <div class="business-line-slider__title">Vestido Azul</div>
-                <div class="business-line-slider__price">$200,000</div>
-
-
-            </div>
-
-
+            <?php endforeach; ?>
         </div>
 
     </div>
