@@ -85,6 +85,7 @@ gulp.task('watch', () => {
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
     gulp.watch('src/partials/**/*.php', gulp.series('interna'));
     gulp.watch('src/partials/**/*.php', gulp.series('detail-page'));
+    gulp.watch('src/partials/**/*.php', gulp.series('vestido'));
     
 });
 
@@ -155,6 +156,20 @@ gulp.task('detail-page', function() {
         ])
         .pipe(plumber())
         .pipe(concat('coleccion.php'))
+      
+        .pipe(gulp.dest(distFolder));
+});
+
+// Business line
+gulp.task('vestido', function() {
+    return gulp.src([
+        './src/partials/_header.html',
+        './src/partials/_top-navigation.html',
+        './src/partials/_vestido.php',
+        './src/partials/_footer.html',
+        ])
+        .pipe(plumber())
+        .pipe(concat('vestido.php'))
       
         .pipe(gulp.dest(distFolder));
 });

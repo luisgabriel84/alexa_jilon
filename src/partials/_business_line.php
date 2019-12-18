@@ -8,7 +8,6 @@ $json = file_get_contents($url);
 $linea = json_decode($json);
 
 $colecciones_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%s',$id);
-
 $json_colecciones = file_get_contents($colecciones_url);
 $colecciones = json_decode($json_colecciones);
 ?>

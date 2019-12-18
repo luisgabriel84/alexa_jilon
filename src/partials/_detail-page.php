@@ -80,7 +80,9 @@ $colecciones = json_decode($json_colecciones);
                             <div>
                 
                                 <div class="business-line-slider__image">
+                                    <a href="vestido.php?slug=<?php echo $vestido->slug ?>">
                                     <img src="<?php echo $vestido->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="business-line-slider__title"><?php echo $vestido->title->rendered ?></div>
                                 <div class="business-line-slider__price">
