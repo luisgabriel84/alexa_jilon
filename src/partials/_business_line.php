@@ -1,9 +1,9 @@
 <?php 
 
-$linea = $_GET['linea'];
+$linea_slug = $_GET['linea'];
 $id =  $_GET['id'];
 
-$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$linea);
+$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$linea_slug);
 $json = file_get_contents($url);
 $linea = json_decode($json);
 
@@ -46,7 +46,7 @@ $colecciones = json_decode($json_colecciones);
             
                 ?>
                 <div class="business-line__collection">
-                    <a href="coleccion.php?coleccion=<?php echo $coleccion->slug ?>">
+                    <a href="coleccion.php?colecciones-alexa-jilon=<?php echo $coleccion->slug ?>&id=<?php echo $coleccion->id ?>&linea=<?php echo $linea_slug ?>">
                         <img src="<?php echo $coleccion->acf->banner_de_coleccion->url ?>" alt="<?php echo $coleccion->name ?>" title="<?php echo $coleccion->name ?>" class="responsive-img">
                     </a>
                 </div>

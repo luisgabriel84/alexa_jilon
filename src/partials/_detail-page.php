@@ -1,19 +1,48 @@
+<?php 
+
+$coleccion = $_GET['colecciones-alexa-jilon'];
+$id =  $_GET['id'];
+$linea =  $_GET['linea'];
+
+
+$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$coleccion);
+$json = file_get_contents($url);
+$coleccion_json = json_decode($json);
+
+
+$parent = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories/%d',$coleccion_json[0]->parent);
+$parent_json = file_get_contents($parent);
+$parent = json_decode($parent_json);
+
+
+
+
+$vestidos_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%d',$id);
+$json_vestidos = file_get_contents($vestidos_url);
+$vestidos = json_decode($json_vestidos);
+
+$colecciones_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%s',$coleccion_json[0]->parent);
+$json_colecciones = file_get_contents($colecciones_url);
+$colecciones = json_decode($json_colecciones);
+
+
+?>
+
+
 <section>
     <figure>
         <div class="detail-page__top-banner">
-            <img src="img/Banner_Imagen_Principal.jpg" alt="" class="responsive-img">
+            <img src="<?php echo $parent->acf->banner->url ?>" alt="" class="responsive-img">
         </div>
     </figure>
 </section>
-
 <section>
 
     <div class="business-line__content">
         <div class="business-line__breadcrumbs">
             <a href="/">Inicio</a> |
-            <a href="/interna.html">Linea Gold Line </a> |
-            <a href="/interna.html">Colecciones </a> |
-            {Nombre línea}
+            <a href="lineas-alexa-jilon.php?linea=<?php echo $linea?>&id=<?php echo $parent->id ?>">Linea <?php echo $parent->name ?> </a> |
+            <?php echo $coleccion_json[0]->name ?>
         </div>
 
         <div class="business-line__headers business-line__headers--flex">
@@ -24,16 +53,16 @@
                     ALEXA JILON
                 </div>
                 <div class="business-line__headers business-line__headers--large">
-                    {Nombre de la linea}
+                    <?php echo $coleccion_json[0]->name ?>
                 </div>
             </div>
             <div class="headers-right">
                 Colección 
-                <select name="" id="">
-                    <option value="">{option 1}</option>
-                    <option value="">{option 2}</option>
-                    <option value="">{option 3}</option>
-                    <option value="">{option 4}</option>
+                <select name="" id="selection-changer" onchange="if (this.value) window.location.href=this.value">
+                <option value="">Seleccione la línea</option>
+                <?php foreach($colecciones as $coleccion): ?>
+                    <option value="/coleccion.php?colecciones-alexa-jilon=<?php echo $coleccion->slug?>&id=<?php echo $coleccion->id ?>"><?php echo $coleccion->name ?></option>
+                <?php endforeach; ?>
                 </select>
             </div>
 
@@ -45,58 +74,26 @@
                     <div class="business-line__slider business-line__slider--white">
             
                         <div class="detail__carousel owl-carousel">
+
+                        <?php foreach($vestidos as $vestido): ?>
                 
                             <div>
                 
                                 <div class="business-line-slider__image">
-                                    <img src="img/seda_11.jpg" alt="">
+                                    <img src="<?php echo $vestido->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="">
                                 </div>
-                                <div class="business-line-slider__title">Vestido Azul</div>
-                                <div class="business-line-slider__price">$200,000</div>
-                
-                
-                            </div>
-                
-                            <div>
-                
-                                <div class="business-line-slider__image">
-                                    <img src="img/seda_11.jpg" alt="">
+                                <div class="business-line-slider__title"><?php echo $vestido->title->rendered ?></div>
+                                <div class="business-line-slider__price">
+                                <?php if($post->acf->precio): ?>
+                                    $<?php echo number_format($post->acf->precio,0,',',',') ?>
+                                <?php endif; ?>
                                 </div>
-                                <div class="business-line-slider__title">Vestido Azul</div>
-                                <div class="business-line-slider__price">$200,000</div>
-                
-                
+            
                             </div>
-                            <div>
-                
-                                <div class="business-line-slider__image">
-                                    <img src="img/seda_11.jpg" alt="">
-                                </div>
-                                <div class="business-line-slider__title">Vestido Azul</div>
-                                <div class="business-line-slider__price">$200,000</div>
-                
-                
-                            </div>
-                            <div>
-                
-                                <div class="business-line-slider__image">
-                                    <img src="img/seda_11.jpg" alt="">
-                                </div>
-                                <div class="business-line-slider__title">Vestido Azul</div>
-                                <div class="business-line-slider__price">$200,000</div>
-                
-                
-                            </div>
-                            <div>
-                
-                                <div class="business-line-slider__image">
-                                    <img src="img/seda_11.jpg" alt="">
-                                </div>
-                                <div class="business-line-slider__title">Vestido Azul</div>
-                                <div class="business-line-slider__price">$200,000</div>
-                
-                
-                            </div>
+                        <?php endforeach; ?>
+
+
+
                 
                 
                         </div>
@@ -107,17 +104,16 @@
                 <section>
                         <div class="business-line__collections">
             
-                                <div class="business-line__collection">
-                                    <a href="/detalle.html">
-                                        <img src="img/img_coleccion-decirtelo.jpg" alt="" class="responsive-img">
-                                    </a>
-                                </div>
-                    
-                                <div class="business-line__collection">
-                                    <a href="/detalle.html">
-                                        <img src="img/img_coleccion-glamurosa.jpg" alt="" class="responsive-img">
-                                    </a>
-                                </div>
+                        <?php foreach($colecciones as $coleccion): 
+                    $cats[] =$coleccion->id;
+            
+                ?>
+                <div class="business-line__collection">
+                    <a href="coleccion.php?colecciones-alexa-jilon=<?php echo $coleccion->slug ?>&id=<?php echo $coleccion->id ?> ">
+                        <img src="<?php echo $coleccion->acf->banner_de_coleccion->url ?>" alt="<?php echo $coleccion->name ?>" title="<?php echo $coleccion->name ?>" class="responsive-img">
+                    </a>
+                </div>
+            <?php endforeach; ?>
 
 
                     

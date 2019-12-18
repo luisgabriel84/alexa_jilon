@@ -24,7 +24,7 @@ function populataMenu(categories){
     categories.forEach(category =>{
         if(category.parent != 0){
             var coleccion = document.createElement('li');
-            coleccion.innerHTML = `<a href="coleccion.html?colecciones-alexa-jilon=${category.slug}">${category.name}</a>`;
+            coleccion.innerHTML = `<a href="coleccion.php?colecciones-alexa-jilon=${category.slug}&id=${category.id}">${category.name}</a>`;
             var ul = document.getElementById(`linea-${category.parent}`);
             ul.appendChild(coleccion);
         }
