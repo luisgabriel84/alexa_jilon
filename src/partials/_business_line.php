@@ -1,0 +1,136 @@
+<?php 
+
+$slug = $_GET['slug'];
+print_r($slug);
+exit;
+$json = file_get_contents('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=swimwear');
+$category = json_decode($json);
+
+
+?>
+
+
+
+<section>
+    <figure>
+        <div class="business-line__top-banner">
+            <img src="img/banner-interna.jpg" alt="" class="responsive-img">
+        </div>
+    </figure>
+
+</section>
+
+<section>
+
+    <div class="business-line__content">
+        <div class="business-line__breadcrumbs">
+            <a href="/">Inicio</a> |
+            {Nombre línea}
+        </div>
+
+        <div class="business-line__headers">
+            <div class="business-line__headers business-line__headers--small">
+
+                ALEXA JILON
+            </div>
+            <div class="business-line__headers business-line__headers--large">
+                {Nombre de la linea}
+            </div>
+        </div>
+
+        <div class="business-line__collections">
+
+            <div class="business-line__collection">
+                <a href="/detalle.html">
+                    <img src="img/img_coleccion-decirtelo.jpg" alt="" class="responsive-img">
+                </a>
+            </div>
+
+            <div class="business-line__collection">
+                <a href="/detalle.html">
+                    <img src="img/img_coleccion-glamurosa.jpg" alt="" class="responsive-img">
+                </a>
+            </div>
+            <div class="business-line__collection">
+                <a href="/detalle.html">
+                    <img src="img/img_coleccion-nocheEstelar.jpg" alt="" class="responsive-img">
+                </a>
+            </div>
+            <div class="business-line__collection">
+                <a href="/detalle.html">
+                    <img src="img/img_coleccion-texturas.jpg" alt="" class="responsive-img">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<section>
+
+    <div class="business-line__slider">
+        <div class="slider-title slider-title--inspiraciones">
+            Conoce más de nuestra Inspiración {Nombre de la línea}
+        </div>
+        <div class="business-line-slider__carousel owl-carousel">
+
+            <div>
+
+                <div class="business-line-slider__image">
+                    <img src="img/seda_11.jpg" alt="">
+                </div>
+                <div class="business-line-slider__title">Vestido Azul</div>
+                <div class="business-line-slider__price">$200,000</div>
+
+
+            </div>
+
+            <div>
+
+                <div class="business-line-slider__image">
+                    <img src="img/seda_11.jpg" alt="">
+                </div>
+                <div class="business-line-slider__title">Vestido Azul</div>
+                <div class="business-line-slider__price">$200,000</div>
+
+
+            </div>
+            <div>
+
+                <div class="business-line-slider__image">
+                    <img src="img/seda_11.jpg" alt="">
+                </div>
+                <div class="business-line-slider__title">Vestido Azul</div>
+                <div class="business-line-slider__price">$200,000</div>
+
+
+            </div>
+            <div>
+
+                <div class="business-line-slider__image">
+                    <img src="img/seda_11.jpg" alt="">
+                </div>
+                <div class="business-line-slider__title">Vestido Azul</div>
+                <div class="business-line-slider__price">$200,000</div>
+
+
+            </div>
+            <div>
+
+                <div class="business-line-slider__image">
+                    <img src="img/seda_11.jpg" alt="">
+                </div>
+                <div class="business-line-slider__title">Vestido Azul</div>
+                <div class="business-line-slider__price">$200,000</div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>

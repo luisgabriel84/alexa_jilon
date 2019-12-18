@@ -81,9 +81,9 @@ gulp.task('watch', () => {
 
 
     //pages
-    gulp.watch('src/partials/**/*.html', gulp.series('index'));
+    gulp.watch('src/partials/**/*.php', gulp.series('index'));
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
-    gulp.watch('src/partials/**/*.html', gulp.series('interna'));
+    gulp.watch('src/partials/**/*.php', gulp.series('interna'));
     gulp.watch('src/partials/**/*.html', gulp.series('detail-page'));
     
 });
@@ -94,11 +94,11 @@ gulp.task('index', function() {
     return gulp.src([
         './src/partials/_header.html',
         './src/partials/_top-navigation.html',
-        './src/partials/_index.html',
+        './src/partials/_index.php',
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('index.html'))
+        .pipe(concat('index.php'))
       
         .pipe(gulp.dest(distFolder));
 });
@@ -136,11 +136,11 @@ gulp.task('interna', function() {
     return gulp.src([
         './src/partials/_header.html',
         './src/partials/_top-navigation.html',
-        './src/partials/_business_line.html',
+        './src/partials/_business_line.php',
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('interna.html'))
+        .pipe(concat('colecciones.php'))
       
         .pipe(gulp.dest(distFolder));
 });
@@ -165,10 +165,10 @@ gulp.task('webserver', function() {
             livereload: true,
             directoryListing: false,
             open: true,
-            port:5151
+            port:8102
         }));
 });
 
 
 
-gulp.task('default', gulp.parallel('watch','webserver'));
+gulp.task('default', gulp.parallel('watch'));
