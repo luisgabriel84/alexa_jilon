@@ -59,31 +59,40 @@ $(document).ready(function(){
             800:{
                 items:3,
                 dotsEach: 2,
+                
             }
 
         },
     });
     $(".detail__carousel").owlCarousel({
-        nav:false,
-        loop: true,
+        nav:true,
+        loop: false,
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
+        autoplay:true,
+        autoplayTimeout:5000,
         responsive:{
             0:{
-                items:3,
+                items:1,
                 dotsEach: 2,
                
             },
             600:{
-                items:3,
+                items:1,
                 dotsEach: 2,
             },
             800:{
                 items:3,
-                dotsEach: 2,
+                dotsEach: 2
             }
 
         },
-    })
+    });
+
+    $(".contact-photo").cycle({
+        fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...,
+      
+        
+	});
 
 
     

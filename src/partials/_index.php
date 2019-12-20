@@ -1,70 +1,30 @@
-<div class="home-slider owl-carousel">
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-NacimosParaReinar.jpg); ">
-        <img src="img/slide/slide-background-NacimosParaReinar.jpg" alt="">
+<?php
+
+$slider_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/homeslider');
+$json_slider = file_get_contents($slider_url);
+$slider_images = json_decode($json_slider);
+
+?>
+
+
+<div class="home-slider owl-carousel" ">
+    <?php foreach($slider_images as $image): ?>
+    <div class="collection-item" style="background-image:url(<?php echo $image->acf->banner->url ?>)">
+        <img src="<?php echo $image->acf->banner->url ?>" alt="">
         <div class="collection-item__label">
 
-            <h3>Nacimos para reinar</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-brilloDiosa.jpg); ">
-        <img src="img/slide/slide-background-brilloDiosa.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Brillo de diosa</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-amaru.jpg); ">
-        <img src="img/slide/slide-background-amaru.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Amaru</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-avefenix.jpg); ">
-        <img src="img/slide/slide-background-avefenix.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Ave Fenix</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-decirtelo.jpg); ">
-        <img src="img/slide/slide-background-decirtelo.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Decirtelo</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-goldline-glamurosa.jpg); ">
-        <img src="img/slide/slide-background-goldline-glamurosa.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Glamurosa</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
+        <?php if($image->acf->label):  ?>
+            <div class="collection-item__smalltext"><?php echo $image->acf->label ?></div>
+        <?php endif; ?>
 
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-nocheEstelar.jpg); ">
-        <img src="img/slide/slide-background-nocheEstelar.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Noche estelar</h3>
-            <a href="" class="black-button">Conócela</a>
+        <h3><?php echo $image->title->rendered ?></h3>
+        <?php if($image->acf->link):  ?>
+            <a href="<?php echo $image->acf->link?>" class="black-button">Conócela</a>
+        <?php endif; ?>
         </div>
+    
     </div>
-    <div class="collection-item" style="background-image: url(img/slide/slide-background-texturas.jpg); ">
-        <img src="img/slide/slide-background-texturas.jpg" alt="">
-        <div class="collection-item__label">
-            <div class="collection-item__smalltext">Colección</div>
-            <h3>Texturas</h3>
-            <a href="" class="black-button">Conócela</a>
-        </div>
-    </div>
-
+    <?php endforeach; ?>
 
 </div>
 <div id="home-main-content">
@@ -88,7 +48,7 @@ $obj = json_decode($json);
             </div>
             <div class="cover__title">
                 <div class="cover__title__first-line"><?php echo $category->name  ?> </div>
-                <div class="cover__title__second-line">Para reinar</div>
+                <div class="cover__title__second-line"></div>
 
             </div>
 

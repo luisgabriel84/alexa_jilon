@@ -107,16 +107,23 @@ nav ul li:hover ul.menu-area{
   
 }
 nav ul.menu-area ul{
-    width:20%;
+    width:16%;
     margin-bottom:40px;
     color: @white;
 }
-nav ul.menu-area h4{
-    margin-bottom:15px;
-    text-transform:uppercase;
-    font-family: @futura-md-bt;
-    color: @gold-1;
-    font-size: 17px;
+nav ul.menu-area h4 a{
+
+        margin-bottom:15px;
+        text-transform:uppercase;
+        font-family: @futura-md-bt;
+        color: @gold-1;
+        font-size: 17px;
+    
+}
+nav ul.menu-area h4 a:hover{
+
+text-decoration: underline;
+
 }
 nav ul.menu-area ul li{
     display: block;
@@ -139,7 +146,7 @@ nav ul.menu-area ul li a:hover{
 @media screen and (max-width: 40em) {
     /* #menu is the original menu */
     .slicknav_btn{
-        background-color:@black;
+        background-color:transparent !important;
         margin-bottom: 14px;
     }
     .res-menu{

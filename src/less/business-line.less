@@ -1,6 +1,8 @@
 .business-line{
     &__content{
         padding: 2%;
+        width: 90%;
+        margin:auto;
     }
 
     &__breadcrumbs{
@@ -21,13 +23,22 @@
             font-family: @futura-light;
             margin-bottom: 2px;
             font-size: 20px;
+            @media (max-width: @extra-small) {
+                text-align: center;
+            }
         }
         &--large{
             text-transform: uppercase;
             font-size: 45px;
+            @media (max-width: @extra-small) {
+                text-align: center;
+            }
         }
         &--flex{
             display: flex;
+            @media (max-width: @extra-small) {
+                display: block;
+            }
             .headers-left{
                 flex: 0 50%;
                 align-items: center;
@@ -39,14 +50,24 @@
                 text-align: right;
                 text-transform: uppercase;
                 font-size: 12px;
+                @media (max-width: @extra-small) {
+                    text-align: left;
+                }
                 select{
                     margin-left: 20px;
                     font-family: @futura-md-bt;
                     padding: 10px;
-                    min-width: 200px;
+                    min-width: 244px;
                     background-color: @white;
                     border: 1px solid @gold-1;
                     text-transform: uppercase;
+                    background: url('../img/down-arraw.png') no-repeat right;
+                    -webkit-appearance: none;
+                    background-position-x: 100%;
+                    @media (max-width: @extra-small) {
+                        margin-left: 0px;
+                    }
+
                     option{
                         font-family: @futura-md-bt;
                         text-transform: uppercase;
@@ -70,7 +91,7 @@
         box-sizing:border-box;
         margin-bottom: 20px;
         @media (min-width: @tablet ){
-            padding: 0% 3% 3% 0;
+            padding: 1% 1%;
             flex: 0 50%;
             margin-bottom: 0px;
         }
@@ -83,7 +104,7 @@
         background-color: @gray-sliders;
         text-align: center;
      
-        padding: 20px 40px;
+        padding: 20px 0px;
 
         @media (min-width: @tablet ){
            // min-height: 630px;

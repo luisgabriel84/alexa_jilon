@@ -137,6 +137,9 @@ body{
         text-align: center;
 
     }
+    &--margin-top{
+        margin-top:4%;
+    }
     &.btn-large{
         width:30%;
     }
@@ -185,6 +188,9 @@ body{
 }
 .slicknav_nav .slicknav_row:hover, .slicknav_nav a:hover{
     background-color: @gold-1 !important;
+    @media (max-width: @extra-small) {
+        background-color: transparent !important;
+    }
 }
 .slicknav_nav h4{
     color:@gold-1;

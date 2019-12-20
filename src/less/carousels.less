@@ -73,8 +73,10 @@
         
     }
     .owl-prev { left: 0px;
+        background:url('../img/left_over_03.jpg');
+        
         &:hover{
-            left:100px;
+            opacity: 0 !important;
         }
     }
     .owl-next { 
@@ -122,6 +124,7 @@
         @media (max-width: @small) {
             width: 85%;
         }
+
     }
     .owl-prev, .owl-next {
         width: 10px;
@@ -134,12 +137,24 @@
     }
     .owl-nav{
         img{
-            width: 35px;
+            width: 49px;
+            @media (max-width: @extra-small) {
+                width: 35px;
+            }
         }
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
-    .owl-prev { left: 7%; }
-    .owl-next { right: 13%; }
+    .owl-prev { left: 7%; 
+        @media (max-width: @extra-small) {
+            left: -4%;
+        }
+    }
+    .owl-next { 
+        right: 16%;       
+        @media (max-width: @extra-small) {
+            right: 3%;
+        } 
+    }
     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
    
 
@@ -180,9 +195,7 @@
         margin: auto;
         border:1px solid @gold-1;
         padding:4%;
-        @media (max-width: @small) {
-            width: 85%;
-        }
+
     }
     &__title{
         font-family: "Futura Light";
@@ -215,10 +228,46 @@
         }
     
         .owl-next:focus, .owl-prev:focus {outline: none;}
-        .owl-prev { left: -20px; }
-        .owl-next { right: 10px; }
+        .owl-prev { left: 1%; }
+        .owl-next { right: 3%; }
         .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
     }
 
 
+}
+.detail__carousel {
+        &__image{
+            width: 60%;
+            text-align: center;
+            margin: auto;
+            border:1px solid @gold-1;
+            padding:4%;
+            @media (max-width: @small) {
+                width: 85%;
+            }
+        }
+
+        .owl-prev, .owl-next {
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            display: block !important;
+            
+        }
+        .owl-nav{
+            img{
+                width: 35px;
+            }
+        }
+    
+        .owl-next:focus, .owl-prev:focus {outline: none;}
+        .owl-prev { left: -20px; }
+        .owl-next { right: 10px; }
+        .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+
+}
+.contacto_slider{
+    width: 50%;
 }

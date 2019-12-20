@@ -12,9 +12,9 @@
 
         <hr/>
         <div class="alexa__icons">
-                <a href ="https://www.facebook.com/AlexaJilonOficial/"><i class="icon icon--facebook--white"></i></a>
-                <a href="https://www.instagram.com/alexajilonoficial/"><i class="icon icon--instagram--white"></i></a>
-                <a href="https://co.pinterest.com/alexajilonoficial/"><i class="icon icon--pinterest--white"></i></a>
+                <a href ="https://www.facebook.com/AlexaJilonOficial/" target="_blank"><i class="icon icon--facebook--white"></i></a>
+                <a href="https://www.instagram.com/alexajilonoficial/" target="_blank"><i class="icon icon--instagram--white"></i></a>
+                <a href="https://co.pinterest.com/alexajilonoficial/" target="_blank"><i class="icon icon--pinterest--white"></i></a>
         </div>
 
     </div>

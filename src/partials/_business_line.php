@@ -44,11 +44,14 @@ $colecciones = json_decode($json_colecciones);
                     $cats[] =$coleccion->id;
             
                 ?>
-                <div class="business-line__collection">
-                    <a href="coleccion.php?colecciones-alexa-jilon=<?php echo $coleccion->slug ?>&id=<?php echo $coleccion->id ?>&linea=<?php echo $linea_slug ?>">
-                        <img src="<?php echo $coleccion->acf->banner_de_coleccion->url ?>" alt="<?php echo $coleccion->name ?>" title="<?php echo $coleccion->name ?>" class="responsive-img">
-                    </a>
-                </div>
+            <div class="business-line__collection">
+                <a
+                    href="coleccion.php?colecciones-alexa-jilon=<?php echo $coleccion->slug ?>&id=<?php echo $coleccion->id ?>&linea=<?php echo $linea_slug ?>">
+                    <img src="<?php echo $coleccion->acf->banner_de_coleccion->url ?>"
+                        alt="<?php echo $coleccion->name ?>" title="<?php echo $coleccion->name ?>"
+                        class="responsive-img">
+                </a>
+            </div>
             <?php endforeach;
             
            
@@ -68,27 +71,31 @@ $colecciones = json_decode($json_colecciones);
 
     <div class="business-line__slider">
         <div class="slider-title slider-title--inspiraciones">
-            Conoce más de nuestra Inspiración  <?php echo $linea[0]->name ?>
+            Conoce más de nuestra Inspiración <?php echo $linea[0]->name ?>
         </div>
         <div class="business-line-slider__carousel owl-carousel">
-        
-        
+
+
             <?php foreach($posts as $post):?>
 
             <div>
 
                 <div class="business-line-slider__image">
-                <a href="vestido.php?slug=<?php echo $post->slug; ?>">
-                    <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>">
-            </a>
+                    <a href="vestido.php?slug=<?php echo $post->slug; ?>">
+                        <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>"
+                            alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>">
+                    </a>
                 </div>
                 <div class="business-line-slider__title"><?php echo $post->title->rendered ?></div>
                 <div class="business-line-slider__price">
-                <?php if($post->acf->precio): ?>
-                            $<?php echo number_format($post->acf->precio,0,',',',') ?>
-                        <?php endif; ?>
+                    <?php if($post->acf->precio): ?>
+                    $<?php echo number_format($post->acf->precio,0,',',',') ?>
+                    <?php endif; ?>
                 </div>
-
+                <a href="https://api.whatsapp.com/send?phone=573104408034" class="black-button  black-button--whatsapp black-button--margin-top">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            Contactame
+                </a>
 
             </div>
             <?php endforeach; ?>

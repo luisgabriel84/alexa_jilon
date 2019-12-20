@@ -1,6 +1,24 @@
+<?php
+$url = 'http://www.alexajilon.femega.com/admin/wp-json/wp/v2/pages/572';
+$contacto_url = file_get_contents($url);
+$contacto = json_decode($contacto_url);
+
+
+?>
 <section class="contact row">
-        <div class="row__column-contact contact-photo">
-                <img src="img/imagenAlexjaJilon_960x1080.jpg" alt="" class="responsive-img">
+        <div class="row__column-contact contact-photo ">
+
+        
+                <?php foreach($contacto->acf as $key =>$foto): ?>
+                        <?php if($foto->url): ?>
+                            <img src="<?php echo $foto->url; ?>" alt="" class="responsive-img">
+                        <?php endif; ?>
+
+                <?php endforeach; ?>
+        
+
+
+       
         </div>
         <div class="row__column-contact contact-form">
             <h3>Contacto</h3>

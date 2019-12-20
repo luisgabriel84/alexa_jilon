@@ -26,7 +26,9 @@
                 margin-bottom: 5px;
                 @media (max-width: @extra-small) {
                     width: 100%;
+                    
                 }
+
             }
             select{
                 background-color:@white;
@@ -41,8 +43,19 @@
                 font-size:12px;
             }
             &__send-button{
-                margin-top:4%;
+                margin-top:6%;
+                margin-bottom: 6%;
             }
         }
+
+        @media (max-width: @extra-small) {
+            margin-top: 20%;
+        }
+    }
+}
+.contact-photo {
+    @media (max-width: @extra-small) {
+        display:none;
+  
     }
 }

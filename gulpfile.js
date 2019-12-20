@@ -86,6 +86,7 @@ gulp.task('watch', () => {
     gulp.watch('src/partials/**/*.php', gulp.series('interna'));
     gulp.watch('src/partials/**/*.php', gulp.series('detail-page'));
     gulp.watch('src/partials/**/*.php', gulp.series('vestido'));
+    gulp.watch('src/partials/**/*.php', gulp.series('contacto'));
     
 });
 
@@ -94,7 +95,7 @@ gulp.task('watch', () => {
 gulp.task('index', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
+        './src/partials/_top-navigation.php',
         './src/partials/_index.php',
         './src/partials/_footer.html',
         ])
@@ -108,12 +109,12 @@ gulp.task('index', function() {
 gulp.task('alexa', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
-        './src/partials/_alexa.html',
+        './src/partials/_top-navigation.php',
+        './src/partials/_alexa.php',
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('alexa-jilon.html'))
+        .pipe(concat('alexa-jilon.php'))
       
         .pipe(gulp.dest(distFolder));
 });
@@ -122,12 +123,12 @@ gulp.task('alexa', function() {
 gulp.task('contacto', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
-        './src/partials/_contacto.html',
+        './src/partials/_top-navigation.php',
+        './src/partials/_contacto.php',
         './src/partials/_footer.html',
         ])
         .pipe(plumber())
-        .pipe(concat('contacto.html'))
+        .pipe(concat('contacto.php'))
       
         .pipe(gulp.dest(distFolder));
 });
@@ -136,7 +137,7 @@ gulp.task('contacto', function() {
 gulp.task('interna', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
+        './src/partials/_top-navigation.php',
         './src/partials/_business_line.php',
         './src/partials/_footer.html',
         ])
@@ -150,7 +151,7 @@ gulp.task('interna', function() {
 gulp.task('detail-page', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
+        './src/partials/_top-navigation.php',
         './src/partials/_detail-page.php',
         './src/partials/_footer.html',
         ])
@@ -164,7 +165,7 @@ gulp.task('detail-page', function() {
 gulp.task('vestido', function() {
     return gulp.src([
         './src/partials/_header.html',
-        './src/partials/_top-navigation.html',
+        './src/partials/_top-navigation.php',
         './src/partials/_vestido.php',
         './src/partials/_footer.html',
         ])
