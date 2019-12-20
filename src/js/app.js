@@ -24,5 +24,9 @@ $(document).ready(function(){
       
     })
   }
-  var lightbox = $('.vestido_carusel a').simpleLightbox();
+
+  if($('.vestido_carusel a').length){
+    var lightbox = $('.vestido_carusel a').simpleLightbox();
+  }
+ 
 });

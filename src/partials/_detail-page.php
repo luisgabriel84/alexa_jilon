@@ -39,7 +39,7 @@ $colecciones = json_decode($json_colecciones);
     <div class="business-line__content">
         <div class="business-line__breadcrumbs">
             <a href="/">Inicio</a> |
-            <a href="lineas-alexa-jilon.php?linea=<?php echo $linea?>&id=<?php echo $parent->id ?>">Linea
+            <a href="lineas-alexa-jilon.php?linea=<?php echo $parent->slug ?>&id=<?php echo $parent->id ?>">Linea
                 <?php echo $parent->name ?> </a> |
             <?php echo $coleccion_json[0]->name ?>
         </div>

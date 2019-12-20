@@ -13,7 +13,10 @@ header{
         min-height: 100px;
     }
     #logo-link{
-        z-index: 4;
+        z-index: 80;
+        @media screen and (min-width: @computer) {
+            margin-top: 8px;
+        }
     }
 }
 nav{
@@ -156,7 +159,7 @@ nav ul.menu-area ul li a:hover{
         display: block;
         background: transparent;
         position: absolute;
-        z-index: 1000;
+        z-index:1000;
         right: 0;
         width: 100%;
         margin-top: 2%;
