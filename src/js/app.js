@@ -24,4 +24,5 @@ $(document).ready(function(){
       
     })
   }
+  var lightbox = $('.vestido_carusel a').simpleLightbox();
 });

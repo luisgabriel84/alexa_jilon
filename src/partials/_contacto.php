@@ -6,9 +6,9 @@ $contacto = json_decode($contacto_url);
 
 ?>
 <section class="contact row">
-        <div class="row__column-contact contact-photo ">
+        <div class="row__column-contact contact-photo">
 
-        
+        <div class="contact-carousel owl-carousel">
                 <?php foreach($contacto->acf as $key =>$foto): ?>
                         <?php if($foto->url): ?>
                             <img src="<?php echo $foto->url; ?>" alt="" class="responsive-img">
@@ -16,7 +16,7 @@ $contacto = json_decode($contacto_url);
 
                 <?php endforeach; ?>
         
-
+        </div>
 
        
         </div>

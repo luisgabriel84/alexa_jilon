@@ -88,8 +88,28 @@ $(document).ready(function(){
         },
     });
 
-    $(".contact-photo").cycle({
-        fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...,
+    $(".contact-carousel").owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        dots: false,
+        loop: false,
+        animateOut: 'fadeOut',
+        responsive:{
+            0:{
+                items:1,
+               
+               
+            },
+            600:{
+                items:1,
+              
+            },
+            800:{
+                items:1,
+               
+            }
+
+        },
         
     });
     

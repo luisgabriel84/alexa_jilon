@@ -1,6 +1,9 @@
 .contact{
     align-items: center;
     justify-content: center;
+    @media (max-width: @extra-small) {
+       display: block;
+    }
     .contact-form{
         padding:0 5%;
         font-family: @futura-light;
@@ -54,8 +57,5 @@
     }
 }
 .contact-photo {
-    @media (max-width: @extra-small) {
-        display:none;
-  
-    }
+min-width: 0%;
 }

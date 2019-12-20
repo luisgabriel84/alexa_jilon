@@ -37,6 +37,7 @@ gulp.task('javascript', function() {
             path.join( owlcarousel , 'owl.carousel.js'),
             path.join( './src/js/', 'carousels.js'),
             path.join( './src/js/', 'jquery.slicknav.min.js'),
+            path.join( './src/js/', 'simple-lightbox.min.js'),
             './src/js/app.js',
             './src/js/navigation.js',
 
