@@ -83,6 +83,7 @@ gulp.task('watch', () => {
     //pages
     gulp.watch('src/partials/**/*.php', gulp.series('index'));
     gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
+    gulp.watch('src/partials/**/*.php', gulp.series('alexa'));
     gulp.watch('src/partials/**/*.php', gulp.series('interna'));
     gulp.watch('src/partials/**/*.php', gulp.series('detail-page'));
     gulp.watch('src/partials/**/*.php', gulp.series('vestido'));

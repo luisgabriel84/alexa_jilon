@@ -3,7 +3,13 @@ $vestido_slug = $_GET['slug'];
 $vestido_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
 $json_vestido = file_get_contents($vestido_url);
 $vestido = json_decode($json_vestido);
+$fotos_vestidos =[];
 
+foreach($vestido[0]->acf as $key => $vestidof){
+    if($key != 'precio' && $vestidof->url){
+        $fotos_vestidos[]= $vestidof->url;
+    }
+}
 
 
 $coleccion= sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories/%d',$vestido[0]->categories[0]);
@@ -11,18 +17,16 @@ $json_coleccion = file_get_contents($coleccion);
 $coleccionInfo = json_decode($json_coleccion);
 
 
-
-
-
-
-
-
 ?>
 
-<section class="alexa row">
-    <div class="row__column-alexa alexa-photo">
-
-        <img src="<?php echo $vestido[0]->acf->foto_1->url ?>" alt="" class="responsive-img" id="foto-alexa">
+<section class="alexa row vestido">
+    <div class="row__column-alexa alexa-photo ">
+        <div class="vestido_carusel owl-carousel">
+        <?php foreach($fotos_vestidos as $foto_vestido): ?>
+            <img src="<?php echo $foto_vestido ?>" alt="" class="responsive-img" id="foto-alexa">
+        <?php endforeach; ?>
+        </div>
+        
     </div>
     <div class="row__column-alexa alexa-bio">
 

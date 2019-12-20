@@ -15,7 +15,7 @@ $subcats=[];
 
 foreach($categories_all as $category){
   
-    if($category->parent ==0 && $category->slug!='sin-categoria'){
+    if($category->parent ==0 && $category->slug!='sin-categoria' && !isset($category->acf->quitar_del_menu[0]) ){
         $arr[$category->id] =  ['id'=>$category->id, 'name'=>$category->name,'slug'=>$category->slug,'parentid'=>$category->parent];
     }
     else if( $category->slug!='sin-categoria') {

@@ -56,8 +56,12 @@ $obj = json_decode($json);
 
         <div class="info-box">
             <div class="text-wrapper">
+
+           
             <?php echo $category->description  ?>
+            <?php if(!isset($category->acf->ocultar_boton[0])): ?>
                 <a href="lineas-alexa-jilon.php?linea=<?php echo $category->slug  ?>&id=<?php echo $category->id ?>" class="black-button black-button--colections " alt="Colecciones <?php echo  $category->name ?>" title="Colecciones <?php echo  $category->name ?>">Colecciones</a>
+            <?php endif; ?>
             </div>
         </div>
 

@@ -90,9 +90,33 @@ $(document).ready(function(){
 
     $(".contact-photo").cycle({
         fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...,
-      
         
-	});
+    });
+    
+    $('.vestido_carusel').owlCarousel({
+        autoplay:true,
+        nav:true,
+        autoplayTimeout:5000,
+        dots: false,
+        loop: false,
+        navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
+        responsive:{
+            0:{
+                items:1,
+               
+               
+            },
+            600:{
+                items:1,
+              
+            },
+            800:{
+                items:1,
+               
+            }
+
+        },
+    });
 
 
     

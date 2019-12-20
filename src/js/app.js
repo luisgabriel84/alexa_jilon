@@ -1,15 +1,27 @@
 //Pagina Alexa Jilon
 
-function alexajilon(content){
-    document.getElementById('alexa_title').innerHTML = content.title.rendered;
-    document.getElementById('alexa_content').innerHTML = content.content.rendered;
-    document.getElementById('foto-alexa').src=content._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
-    
-}
-fetch('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/pages/52?_embed')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(content) {
-       alexajilon(content);
-  });
+$(document).ready(function(){
+
+
+  function popuplate_select(response){
+    $("#sel_producto option").remove();
+    var options = $("#sel_producto");
+    $.each(response,function(e,item){
+      options.append($("<option />").val(item.title.rendered).text(item.title.rendered));
+
+    });
+  }
+  if($('#sel_coleccion').length){
+    $('#sel_coleccion').change(function(){
+      var url = `http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?categories=${ $(this).val()}`;
+      fetch(url)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(content) {
+          popuplate_select(content);
+      });
+      
+    })
+  }
+});

@@ -13,7 +13,7 @@
     .collection-item{
 
         @media (max-width: @small) {
-            min-height: 400px;
+            min-height: 100vh;
             background-size:cover;
             background-position: 50% 50%;
         }
@@ -76,7 +76,7 @@
         background:url('../img/left_over_03.jpg');
         
         &:hover{
-            opacity: 0 !important;
+            
         }
     }
     .owl-next { 
@@ -99,6 +99,10 @@
     .owl-dot{
         width:15px;
         height:15px;
+        @media (max-width: @small) {
+            width:14px;
+            height:14px;
+        } 
         border:1px solid @white !important;
         background-color: @black !important;
         border-radius: 10px;
@@ -270,4 +274,37 @@
 }
 .contacto_slider{
     width: 50%;
+}
+
+
+.vestido_carusel{
+
+.owl-prev, .owl-next {
+    width: 10px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    display: block !important;
+    
+}
+.owl-nav{
+    img{
+       
+        @media (max-width: @extra-small) {
+           
+        }
+    }
+}
+.owl-next:focus, .owl-prev:focus {outline: none;}
+.owl-prev { left: 0%; 
+    
+}
+.owl-next { 
+    right: 10%;       
+    @media (max-width: @extra-small) {
+        right: 15%;
+    } 
+}
+.owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
 }

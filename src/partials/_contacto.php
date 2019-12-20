@@ -29,19 +29,17 @@ $contacto = json_decode($contacto_url);
                     <div><input type="text" placeholder="Celular*"></div>
                     <div><input type="text" placeholder="Correo electrónico*"></div>
                     <div>
-                        <select name="" id="">
-                            <option value="">Colección</option>
-                            <option value="">Colección 1</option>
-                            <option value="">Colección 2</option>
-                            <option value="">Colección 3</option>
+                        <select name="coleccion" id="sel_coleccion">
+                        <option value="">Seleccione la línea</option>
+                            <?php foreach($arr as $coleccion): ?>
+                            <option value="<?php echo $coleccion['id'] ?>"><?php echo $coleccion['name'] ?></option>
+                            <?php endforeach ?>
+                            
                         </select>
                     </div>
                     <div>
-                        <select name="" id="">
-                            <option value="">Producto</option>
-                            <option value="">Producto 1</option>
-                            <option value="">Producto 2</option>
-                            <option value="">Producto 3</option>
+                        <select name="producto" id="sel_producto">
+                        <option value="">Producto</option>
                         </select>
                     </div>
                     <div>
