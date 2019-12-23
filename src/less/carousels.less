@@ -58,6 +58,41 @@
             }
         }
     }
+
+
+
+    button.owl-prev{
+        width: 71px;
+        height: 71px;
+        @media (max-width: @extra-small) {
+            width: 35px;
+            height: 35px;
+        }
+        
+        &:hover{
+            background-image: url('../img/left_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
+    button.owl-next{
+        width: 71px;
+        height: 71px;
+        @media (max-width: @extra-small) {
+            width: 35px;
+            height: 35px;
+        }
+        
+        &:hover{
+            background-image: url('../img/right_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
     .owl-prev, .owl-next {
         width: 15px;
         height: 100px;
@@ -73,17 +108,11 @@
         
     }
     .owl-prev { left: 0px;
-        background:url('../img/left_over_03.jpg');
+      
         
-        &:hover{
-            
-        }
     }
     .owl-next { 
-        right: 56px;            
-        @media (max-width: @small) {
-            right: 20px;
-        } 
+        right: 0%;            
     }
     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
     .owl-next:focus, .owl-prev:focus {outline: none;}
@@ -148,15 +177,49 @@
         }
     }
     .owl-next:focus, .owl-prev:focus {outline: none;}
-    .owl-prev { left: 7%; 
+    button.owl-prev{
+        width: 49px;
+        height: 49px;
+        @media (max-width: @extra-small) {
+            width: 35px;
+            height: 35px;
+        }
+        
+        &:hover{
+            background-image: url('../img/left_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
+    button.owl-next{
+        width: 49px;
+        height: 49px;
+        @media (max-width: @extra-small) {
+            width: 35px;
+            height: 35px;
+        }
+        
+        &:hover{
+            background-image: url('../img/right_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
+    .owl-prev { 
+        left: 7%; 
+        
         @media (max-width: @extra-small) {
             left: -4%;
         }
     }
     .owl-next { 
-        right: 16%;       
+        right: 7%;       
         @media (max-width: @extra-small) {
-            right: 3%;
+            right: -5%;
         } 
     }
     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
@@ -216,13 +279,49 @@
     }
     
     &__carousel{
+        button.owl-prev{
+            width: 35px;
+            height: 35px;
+            @media (max-width: @extra-small) {
+                width: 35px;
+                height: 35px;
+            }
+            
+            &:hover{
+                background-image: url('../img/left_over_03.jpg') !important;
+                background-size: cover !important;
+                img{
+                    display: none;
+                }
+            }
+        }
+        button.owl-next{
+            width: 35px;
+            height: 35px;
+            @media (max-width: @extra-small) {
+                width: 35px;
+                height: 35px;
+            }
+            
+            &:hover{
+                background-image: url('../img/right_over_03.jpg') !important;
+                background-size: cover !important;
+                img{
+                    display: none;
+                }
+            }
+        }
+        
         .owl-prev, .owl-next {
             width: 10px;
             height: 100px;
             position: absolute;
-            top: 40%;
+            top: 28%;
             transform: translateY(-50%);
             display: block !important;
+            @media (max-width: @small) {
+                top: 28%;
+            }
             
         }
         .owl-nav{
@@ -232,8 +331,17 @@
         }
     
         .owl-next:focus, .owl-prev:focus {outline: none;}
-        .owl-prev { left: 1%; }
-        .owl-next { right: 3%; }
+        .owl-prev { left: 3%; 
+            @media (max-width: @small) {
+                left: 9%;
+            }
+        }
+        .owl-next { 
+            right: 3%;
+            @media (max-width: @small) {
+                right: 10%;
+            }
+        }
         .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
     }
 
@@ -250,12 +358,44 @@
                 width: 85%;
             }
         }
+        button.owl-prev{
+            width: 35px;
+            height: 35px;
+            @media (max-width: @extra-small) {
+                width: 35px;
+                height: 35px;
+            }
+            
+            &:hover{
+                background-image: url('../img/left_over_03.jpg') !important;
+                background-size: cover !important;
+                img{
+                    display: none;
+                }
+            }
+        }
+        button.owl-next{
+            width: 35px;
+            height: 35px;
+            @media (max-width: @extra-small) {
+                width: 35px;
+                height: 35px;
+            }
+            
+            &:hover{
+                background-image: url('../img/right_over_03.jpg') !important;
+                background-size: cover !important;
+                img{
+                    display: none;
+                }
+            }
+        }
 
         .owl-prev, .owl-next {
             width: 10px;
             height: 100px;
             position: absolute;
-            top: 40%;
+            top: 28%;
             transform: translateY(-50%);
             display: block !important;
             
@@ -267,7 +407,12 @@
         }
     
         .owl-next:focus, .owl-prev:focus {outline: none;}
-        .owl-prev { left: -20px; }
+        .owl-prev { 
+           
+            @media (max-width: @extra-small) {
+                left: 3%;
+            } 
+        }
         .owl-next { right: 10px; }
         .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
 
@@ -278,6 +423,40 @@
 
 
 .vestido_carusel{
+
+
+    button.owl-prev{
+        width: 71px;
+        height: 71px;
+        @media (max-width: @extra-small) {
+            width: 71px;
+            height: 71px;
+        }
+        
+        &:hover{
+            background-image: url('../img/left_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
+    button.owl-next{
+        width: 71px;
+        height: 71px;
+        @media (max-width: @extra-small) {
+            width: 71px;
+            height: 71px;
+        }
+        
+        &:hover{
+            background-image: url('../img/right_over_03.jpg') !important;
+            background-size: cover !important;
+            img{
+                display: none;
+            }
+        }
+    }
 
 .owl-prev, .owl-next {
     width: 10px;
@@ -301,10 +480,7 @@
     
 }
 .owl-next { 
-    right: 10%;       
-    @media (max-width: @extra-small) {
-        right: 15%;
-    } 
+    right: 0%; 
 }
 .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
 }

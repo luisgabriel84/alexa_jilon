@@ -29,7 +29,7 @@ $colecciones = json_decode($json_colecciones);
 
 <section>
     <figure>
-        <div class="detail-page__top-banner">
+        <div class="detail-page__top-banner" style="background: url(<?php echo $parent->acf->banner->url ?>);"> 
             <img src="<?php echo $parent->acf->banner->url ?>" alt="" class="responsive-img">
         </div>
     </figure>
