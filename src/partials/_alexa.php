@@ -25,20 +25,3 @@ $alexa = json_decode($alexa_url);
 
     </div>
 </section>
-
-<div class="slider-instagram">
-    <div class="slider-instagram__title">
-        <h5>Instagram</h5>
-    </div>
-        @alexajilonoficial
-        <div class="slider-instagram__carousel owl-carousel">
-                <div class="instagram-thumb"><img src="img/vestido-azul_07.jpg" alt="">Conjunto en #seda</div>
-                <div class="instagram-thumb"> <img src="img/seda_11.jpg" alt="">#Noche Estelar</div>
-                <div class="instagram-thumb"> <img src="img/vestido-belle_07.jpg" alt="">Vestido Belle Rose</div>
-                <div class="instagram-thumb"> <img src="img/seda_11.jpg" alt="">#Noche Estelar</div>
-                <div class="instagram-thumb"> <img src="img/vestido-azul_07.jpg" alt="">Conjunto en #seda</div>
-                <div class="instagram-thumb"> <img src="img/seda_11.jpg" alt="">Conjunto en #seda</div>
-                <div class="instagram-thumb"> <img src="img/vestido-belle_07.jpg" alt="">Conjunto en #seda</div>
-                <div class="instagram-thumb"> <img src="img/seda_11.jpg" alt="">#Noche Estelar</div>
-        </div>
-</div>

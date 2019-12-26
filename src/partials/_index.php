@@ -116,23 +116,3 @@ $obj = json_decode($json);
 <?php endforeach; ?>
 
 </div>
-
-
-<div class="slider-instagram">
-    <div class="slider-instagram__title">
-        <h5>Instagram</h5>
-    </div>
-    @alexajilonoficial
-    <div class="slider-instagram__carousel owl-carousel">
-        <div class="instagram-thumb"><img src="img/vestido-azul_07.jpg" alt="">Conjunto en #seda</div>
-        <div class="instagram-thumb"><a href="#"> <img src="img/seda_11.jpg" alt=""></a>#Noche Estelar</div>
-        <div class="instagram-thumb"> <a href="#"> <img src="img/vestido-belle_07.jpg" alt=""></a>Vestido Belle Rose
-        </div>
-        <div class="instagram-thumb"><a href="#"> <img src="img/seda_11.jpg" alt=""></a>#Noche Estelar</div>
-        <div class="instagram-thumb"><a href="#"> <img src="img/vestido-azul_07.jpg" alt=""></a>Conjunto en #seda</div>
-        <div class="instagram-thumb"><a href="#"> <img src="img/seda_11.jpg" alt=""></a>Conjunto en #seda</div>
-        <div class="instagram-thumb"> <a href="#"> <img src="img/vestido-belle_07.jpg" alt=""></a>Conjunto en #seda
-        </div>
-        <div class="instagram-thumb"><a href="#"> <img src="img/seda_11.jpg" alt=""></a>#Noche Estelar</div>
-    </div>
-</div>

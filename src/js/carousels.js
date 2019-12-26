@@ -17,34 +17,6 @@ $(document).ready(function(){
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />']
     });
 
-    $(".slider-instagram__carousel").owlCarousel({
-        items:6,
-        nav:false,
-        loop: true,
-        margin:20,
-        responsive:{
-            0:{
-                items:2,
-                dotsEach: 2,
-            },
-            600:{
-                items:4,
-                dotsEach: 2,
-            },
-            800:{
-                items:4,
-                dotsEach: 2,
-            },
-            1000:{
-                items:6,
-                dotsEach: 2,
-            }
-
-        },
-
-       
-    });
-
     $(".business-line-slider__carousel").owlCarousel({
         nav:true,
         loop: true,
