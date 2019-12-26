@@ -16,7 +16,7 @@ header{
         z-index: 80;
         @media screen and (max-width: @extra-small) {
             position: absolute;
-            margin-top:10%;
+            margin-top:9%;
             margin-left:3%;
         }
 
@@ -157,7 +157,7 @@ nav ul.menu-area ul li a:hover{
     .slicknav_btn{
         margin: 19px 5px 14px 6px;
         background-color: transparent!important; 
-        padding-bottom: 10px
+        padding-bottom: 14px
     }
     .res-menu{
         display: none;
@@ -182,5 +182,31 @@ nav ul.menu-area ul li a:hover{
     .slicknav_nav .slicknav_row, .slicknav_nav a {
         padding: 5px 10px;
         margin: 14px 5px;
+        &:focus{
+            outline: none;
+        }
+    }
+    .slicknav_open{
+        .slicknav_menutxt{
+            &::after{
+                content:"\0274c";
+                position: absolute;
+                left: 10px;
+                margin-left: 1px;
+                margin-top: -3px;
+                font-size: 22px;
+                font-weight: normal;
+            }
+        }
+        
+        .slicknav_icon-bar{
+            display: none;
+        }
+    }
+    .slicknav_collapsed{
+       
+        .slicknav_icon-bar{
+            display: block;
+        }
     }
 }

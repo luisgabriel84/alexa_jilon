@@ -107,7 +107,6 @@ $obj = json_decode($json);
             <?php endforeach; ?>
 
             </div>
-
         </div>
     </div>
 </div>

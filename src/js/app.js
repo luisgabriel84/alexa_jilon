@@ -44,5 +44,9 @@ $(document).ready(function(){
     }
     
   });
+
+  var xSpan = document.createElement("span");
+  xSpan.innerHTML = "X";
+ $(".slicknav_icon").append(xSpan);
  
 });
