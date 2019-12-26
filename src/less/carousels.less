@@ -154,6 +154,10 @@
         margin: auto;
         border:1px solid @gold-1;
         padding:5%;
+
+        @media (max-width: @tablet) {
+            width: 70%;
+        }
         @media (max-width: @small) {
             width: 85%;
         }
@@ -171,6 +175,10 @@
     .owl-nav{
         img{
             width: 49px;
+            @media (max-width: @tablet) {
+                width: 40px;
+                height: 40px;
+            }
             @media (max-width: @extra-small) {
                 width: 35px;
             }
@@ -180,6 +188,10 @@
     button.owl-prev{
         width: 49px;
         height: 49px;
+        @media (max-width: @tablet) {
+            width: 40px;
+            height: 40px;
+        }
         @media (max-width: @extra-small) {
             width: 35px;
             height: 35px;
@@ -196,6 +208,9 @@
     button.owl-next{
         width: 49px;
         height: 49px;
+        @media (max-width: @tablet) {
+            width: 40px;
+        }
         @media (max-width: @extra-small) {
             width: 35px;
             height: 35px;
@@ -211,13 +226,19 @@
     }
     .owl-prev { 
         left: 7%; 
+        @media (max-width: @tablet) {
+            left: -6%;
+        }
         
         @media (max-width: @extra-small) {
             left: -4%;
         }
     }
     .owl-next { 
-        right: 7%;       
+        right: 7%;
+        @media (max-width: @tablet) {
+            right: -6%;
+        }  
         @media (max-width: @extra-small) {
             right: -5%;
         } 

@@ -28,5 +28,21 @@ $(document).ready(function(){
   if($('.vestido_carusel a').length){
     var lightbox = $('.vestido_carusel a').simpleLightbox();
   }
+
+  $('#send-contact').click(function(e){
+    e.preventDefault();
+    if(!$("#contact-form").valid()){
+      //error
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al enviar mensaje',
+        text: 'Corrige los campos seleccionados'
+      })
+    }else{
+      //send
+     
+    }
+    
+  });
  
 });

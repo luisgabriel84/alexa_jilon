@@ -6,7 +6,6 @@ $slider_images = json_decode($json_slider);
 
 ?>
 
-
 <div class="home-slider owl-carousel" ">
     <?php foreach($slider_images as $image): ?>
     <div class="collection-item" style="background-image:url(<?php echo $image->acf->banner->url ?>)">
@@ -101,7 +100,7 @@ $obj = json_decode($json);
                         <?php endif; ?>
                         </div>
                         <div class="mini-slider__label">¿Lo quieres para tí?</div>
-                        <a href="https://api.whatsapp.com/send?phone=573104408034" class="black-button  black-button--whatsapp">
+                        <a href="https://api.whatsapp.com/send?phone=573104408034" target="_blank" class="black-button  black-button--whatsapp">
                             <i class="fa fa-whatsapp" aria-hidden="true"></i>
                             Contactame</a>
                     </div>

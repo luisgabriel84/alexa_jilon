@@ -26,13 +26,16 @@ $(document).ready(function(){
             0:{
                 items:2,
                 dotsEach: 2,
-               
             },
             600:{
-                items:3,
+                items:4,
                 dotsEach: 2,
             },
             800:{
+                items:4,
+                dotsEach: 2,
+            },
+            1000:{
                 items:6,
                 dotsEach: 2,
             }
@@ -53,10 +56,14 @@ $(document).ready(function(){
                
             },
             600:{
-                items:1,
+                items:2,
                 dotsEach: 2,
             },
             800:{
+                items:2,
+                dotsEach: 2,
+            },
+            1000:{
                 items:3,
                 dotsEach: 2,
                 
@@ -77,12 +84,17 @@ $(document).ready(function(){
                
             },
             600:{
-                items:1,
+                items:2,
                 dotsEach: 2,
             },
             800:{
                 items:3,
-                dotsEach: 2
+                dotsEach: 2,
+            },
+            1000:{
+                items:3,
+                dotsEach: 2,
+                
             }
 
         },

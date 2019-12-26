@@ -23,7 +23,7 @@
             width:50%;
             font-size: 15px;
             @media (max-width: @tablet) {
-                width: 75%;
+                width: 95%;
             }
             @media (max-width: @small) {
                 width: 95%;
@@ -36,11 +36,18 @@
         height: 50%;
         width: 100%;
         margin-top: 12%;
+        @media (max-width: @tablet) {
+            padding:2%;
+        }
     }
     &__logo{
         img{
             width: 298px;
             height: 99px;
+            @media (max-width: @tablet) {
+                width: 168px;
+                height: 65px;
+            }
             @media (max-width: @small) {
                 max-width: 195px;
                 margin-top: 16%;

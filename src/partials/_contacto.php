@@ -17,19 +17,18 @@ $contacto = json_decode($contacto_url);
                 <?php endforeach; ?>
         
         </div>
-
        
         </div>
         <div class="row__column-contact contact-form">
             <h3>Contacto</h3>
             Quieres conocer nuestras últimas colecciones y promociones, contáctanos!
             <div class="form">
-                <form action="">
-                    <div><input type="text" placeholder="Nombres y apellidos"></div>
-                    <div><input type="text" placeholder="Celular*"></div>
-                    <div><input type="text" placeholder="Correo electrónico*"></div>
+                <form action="contacto.php" id="contact-form">
+                    <div><input type="text" placeholder="Nombres y apellidos" required name="nombres"></div>
+                    <div><input type="text" placeholder="Celular*" name="celular"></div>
+                    <div><input type="email" placeholder="Correo electrónico*" class="required" name="correo"></div>
                     <div>
-                        <select name="coleccion" id="sel_coleccion">
+                        <select name="coleccion" id="sel_coleccion" required name="coleccion">
                         <option value="">Seleccione la línea</option>
                             <?php foreach($arr as $coleccion): ?>
                             <option value="<?php echo $coleccion['id'] ?>"><?php echo $coleccion['name'] ?></option>
@@ -38,19 +37,19 @@ $contacto = json_decode($contacto_url);
                         </select>
                     </div>
                     <div>
-                        <select name="producto" id="sel_producto">
+                        <select name="producto" id="sel_producto" required name="producto">
                         <option value="">Producto</option>
                         </select>
                     </div>
                     <div>
-                        <textarea name="" id="" cols="30" rows="4" placeholder="Mensaje"></textarea>
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="4" placeholder="Mensaje" required></textarea>
                     </div>
                     <div>
                         <input type="checkbox"> <label for="">*Acepto y atorizo el tratamiento de datos personales</label>
                     </div>
                     
                     <div class="form__send-button">
-                        <input type="submit" value="Enviar" class="black-button black-button--left btn-large">
+                        <input type="submit" value="Enviar" id="send-contact" class="black-button black-button--left btn-large">
                     </div>
                   
 

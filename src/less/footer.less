@@ -5,8 +5,14 @@ footer{
     @media (max-width: @small) {
         padding: 10px; 
     }
+    @media (max-width: @tablet) {
+        padding: 42px 14px;
+    }
     .row{
         margin-top:70px;
+        @media (max-width: @tablet) {
+            margin-top:0px;
+        }
         &__column-footer{
             color:@white;
         }
@@ -96,6 +102,9 @@ footer{
                 padding: 10px;
                 width: 250px;
                 color:@nobel;
+                @media (max-width: @tablet) {
+                    width: 100%;
+                }
                 @media (max-width: @extra-small) {
                     width: 100%;
                 }

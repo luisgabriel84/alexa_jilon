@@ -92,7 +92,7 @@ $colecciones = json_decode($json_colecciones);
                             $<?php echo number_format($post->acf->precio,0,',',',') ?>
                             <?php endif; ?>
                         </div>
-                        <a href="https://api.whatsapp.com/send?phone=573104408034" class="black-button  black-button--whatsapp black-button--margin-top">
+                        <a href="https://api.whatsapp.com/send?phone=573104408034" target="_blank" class="black-button  black-button--whatsapp black-button--margin-top">
                             <i class="fa fa-whatsapp" aria-hidden="true"></i>
                             Contactame
                 </a>

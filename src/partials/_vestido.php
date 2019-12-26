@@ -52,7 +52,7 @@ $coleccionInfo = json_decode($json_coleccion);
         </div>
 
 
-        <a href="https://api.whatsapp.com/send?phone=573104408034"
+        <a href="https://api.whatsapp.com/send?phone=573104408034" target="_blank"
             class="black-button  black-button--whatsapp black-button--left">
             <i class="fa fa-whatsapp" aria-hidden="true"></i>
             Contactame
