@@ -41,7 +41,6 @@ $coleccionInfo = json_decode($json_coleccion);
 
         <h1><?php echo $vestido[0]->title->rendered; ?></h1>
         <p>
-
             <?php echo $vestido[0]->content->rendered; ?>
 
         </p>
@@ -62,7 +61,7 @@ $coleccionInfo = json_decode($json_coleccion);
 
             <div class="alexa__icons">
                 Compartir
-                <a href="https://www.facebook.com/AlexaJilonOficial/"><i class="icon icon--facebook--white"></i></a>
+                <a href="http://www.facebook.com/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>&t=<?php echo $vestido[0]->title->rendered; ?>/" target="_blank"><i class="icon icon--facebook--white"></i></a>
                 <a href="https://www.instagram.com/alexajilonoficial/"><i class="icon icon--instagram--white"></i></a>
                 <a href="http://pinterest.com/pin/create/button/?url=http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank"><i class="icon icon--pinterest--white"></i></a>
             </div>

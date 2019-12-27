@@ -32,6 +32,10 @@ $slider_images = json_decode($json_slider);
 $json = file_get_contents('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=0');
 $obj = json_decode($json);
 
+usort($obj, function($a, $b) {
+    return $a->acf->orden_del_home - $b->acf->orden_del_home;
+});
+
 ?>
 
 <?php foreach($obj as $category):?>
@@ -68,7 +72,7 @@ $obj = json_decode($json);
     <div class="row__column-index">
 
         <div class="mini-slider">
-            <h4>Promoción del mes</h4>
+          
 
 
             <div class="mini-slider__carousel owl-carousel">
@@ -89,21 +93,26 @@ $obj = json_decode($json);
                
                ?>
                 <?php foreach($posts as $post):?>
-                    <div>
-                        <div class="mini-slider__title"><?php echo $post->title->rendered ?></div>
-                        <div class="mini-slider__image"> 
-                            <a href="vestido.php?slug=<?php echo $post->slug; ?>"> <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>"></a>
+
+                    <?php if($post->acf->en_promocion[0]=='1'):?>    
+                        <div>
+                            <h4><?php echo $post->acf->titulo_promocion_del_mes; ?></h4>
+                            <div class="mini-slider__title"><?php echo $post->title->rendered ?></div>
+                            <div class="mini-slider__image"> 
+                                <a href="vestido.php?slug=<?php echo $post->slug; ?>"> <img src="<?php echo $post->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>" alt="<?php echo $post->title->rendered ?>" title="<?php echo $post->title->rendered ?>" class="foto-vestido"></a>
+                            </div>
+                            <div class="mini-slider__price">
+                            <?php if($post->acf->precio): ?>
+                                $<?php echo number_format($post->acf->precio,0,',',',') ?>
+                            <?php endif; ?>
+                            </div>
+                            <div class="mini-slider__label">¿Lo quieres para tí?</div>
+                            <a href="https://api.whatsapp.com/send?phone=573104408034" target="_blank" class="black-button  black-button--whatsapp">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                Contactame</a>
                         </div>
-                        <div class="mini-slider__price">
-                        <?php if($post->acf->precio): ?>
-                            $<?php echo number_format($post->acf->precio,0,',',',') ?>
-                        <?php endif; ?>
-                        </div>
-                        <div class="mini-slider__label">¿Lo quieres para tí?</div>
-                        <a href="https://api.whatsapp.com/send?phone=573104408034" target="_blank" class="black-button  black-button--whatsapp">
-                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                            Contactame</a>
-                    </div>
+
+                    <?php endif; ?>
             <?php endforeach; ?>
 
             </div>

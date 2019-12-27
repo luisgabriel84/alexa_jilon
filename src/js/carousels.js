@@ -98,7 +98,7 @@ $(document).ready(function(){
     });
     
     $('.vestido_carusel').owlCarousel({
-        autoplay:true,
+        autoplay:false,
         nav:true,
         autoplayTimeout:5000,
         dots: false,
