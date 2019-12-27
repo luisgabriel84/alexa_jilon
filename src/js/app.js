@@ -48,5 +48,6 @@ $(document).ready(function(){
  if( $('.vestido').length){
    $('header').addClass('header--small');
    $('.slicknav_menu').addClass('slicknav_menu--dark');
+ 
  }
 });

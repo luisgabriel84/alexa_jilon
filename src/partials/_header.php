@@ -15,10 +15,25 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.3/dist/sweetalert2.all.min.js"></script>
 
 
+    <?php  $file =  basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
 
-    
+    <?php if($file=="vestido.php" ): 
+        $vestido_slug = $_GET['slug'];
+        $vestido_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
+        $json_vestido = file_get_contents($vestido_url);
+        $vestido = json_decode($json_vestido);    
+        
+    ?>
+    <meta property="og:image" content="<?php echo $vestido[0]->acf->foto_1->url; ?>" />
+    <meta property="og:title" content="<?php echo $vestido[0]->title->rendered; ?>" />
+    <title><?php echo $vestido[0]->title->rendered; ?></title>
+
+
+    <?php else:  ?>
+        <title>Alexa Jilon</title>
+    <?php endif; ?>
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alexa Jilon</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>

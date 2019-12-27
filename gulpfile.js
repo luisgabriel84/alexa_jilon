@@ -97,7 +97,7 @@ gulp.task('watch', () => {
 // Index
 gulp.task('index', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_index.php',
         './src/partials/_footer.html',
@@ -111,7 +111,7 @@ gulp.task('index', function() {
 // Alexa
 gulp.task('alexa', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_alexa.php',
         './src/partials/_footer.html',
@@ -125,7 +125,7 @@ gulp.task('alexa', function() {
 // Contacto
 gulp.task('contacto', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_contacto.php',
         './src/partials/_footer.html',
@@ -139,7 +139,7 @@ gulp.task('contacto', function() {
 // Business line
 gulp.task('interna', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_business_line.php',
         './src/partials/_footer.html',
@@ -153,7 +153,7 @@ gulp.task('interna', function() {
 // Business line
 gulp.task('detail-page', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_detail-page.php',
         './src/partials/_footer.html',
@@ -167,7 +167,7 @@ gulp.task('detail-page', function() {
 // Business line
 gulp.task('vestido', function() {
     return gulp.src([
-        './src/partials/_header.html',
+        './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_vestido.php',
         './src/partials/_footer.html',

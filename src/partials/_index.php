@@ -86,7 +86,7 @@ usort($obj, function($a, $b) {
                 $cats[] =$cat->id;
                }
                $strCat = implode (",", $cats);
-               $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s',$strCat));
+               $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s&per_page=20&order=asc',$strCat));
                $posts = json_decode($json);
            
             
