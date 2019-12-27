@@ -10,7 +10,7 @@ header{
     z-index: 100;
     background: @nav-color;
     @media screen and (min-width: @computer) {
-        min-height: 100px;
+        height: 100px;
     }
     #logo-link{
         z-index: 80;
@@ -171,6 +171,9 @@ nav ul.menu-area ul li a:hover{
         width: 100%;
         padding:0px;
         background-color: @nav-color;
+        &--dark{
+            background-color: @black;
+        }
     }
     .slicknav_nav{
         background: @nav-color;

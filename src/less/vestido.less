@@ -1,0 +1,44 @@
+.vestido{
+
+
+    .alexa-photo {
+        @media (max-width: @extra-small) {
+            padding-top:68px;
+        }
+        @media (min-width: @tablet) {
+            margin-top:70px;
+        }
+    }
+    .foto-vestido{
+        @media screen and (min-width: @tablet) {
+            width: auto !important;
+            max-height: 112vh !important;
+        }
+      
+       
+    }
+   
+
+}
+header{
+   
+   &.header--small{
+    @media screen and (min-width: @tablet) {
+        height: 70px !important;
+        background-color: @black !important;
+        .logo{
+            max-height: 50px;
+            margin-left: 40px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        
+        }
+        nav > ul> li > a{
+            padding: 26px 25px;
+        }
+    }
+
+
+   }
+
+}

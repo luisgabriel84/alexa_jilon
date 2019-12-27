@@ -45,8 +45,8 @@ $(document).ready(function(){
     
   });
 
-  var xSpan = document.createElement("span");
-  xSpan.innerHTML = "X";
- $(".slicknav_icon").append(xSpan);
- 
+ if( $('.vestido').length){
+   $('header').addClass('header--small');
+   $('.slicknav_menu').addClass('slicknav_menu--dark');
+ }
 });

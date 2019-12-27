@@ -23,7 +23,7 @@ $coleccionInfo = json_decode($json_coleccion);
     <div class="row__column-alexa alexa-photo ">
         <div class="vestido_carusel owl-carousel">
             <?php foreach($fotos_vestidos as $foto_vestido): ?>
-               <a href="<?php echo $foto_vestido ?>"> <img src="<?php echo $foto_vestido ?>" alt="<?php echo  $vestido[0]->title->rendered ?>" title="<?php echo  $vestido[0]->title->rendered ?>" class="responsive-img" id="foto-alexa"></a>
+               <a href="<?php echo $foto_vestido ?>"> <img src="<?php echo $foto_vestido ?>" alt="<?php echo  $vestido[0]->title->rendered ?>" title="<?php echo  $vestido[0]->title->rendered ?>" class="responsive-img foto-vestido" id="foto-alexa"></a>
             <?php endforeach; ?>
         </div>
         
@@ -64,7 +64,7 @@ $coleccionInfo = json_decode($json_coleccion);
                 Compartir
                 <a href="https://www.facebook.com/AlexaJilonOficial/"><i class="icon icon--facebook--white"></i></a>
                 <a href="https://www.instagram.com/alexajilonoficial/"><i class="icon icon--instagram--white"></i></a>
-                <a href="https://co.pinterest.com/alexajilonoficial/"><i class="icon icon--pinterest--white"></i></a>
+                <a href="http://pinterest.com/pin/create/button/?url=http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank"><i class="icon icon--pinterest--white"></i></a>
             </div>
         </div>
 
