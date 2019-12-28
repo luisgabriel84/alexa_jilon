@@ -422,12 +422,14 @@
     button.owl-prev{
         width: 71px;
         height: 71px;
+        z-index:2000;
         @media (max-width: @extra-small) {
             width: 71px;
             height: 71px;
         }
         
         &:hover{
+            z-index:2000;
             background-image: url('../img/left_over_03.jpg') !important;
             background-size: cover !important;
             img{
@@ -436,6 +438,7 @@
         }
     }
     button.owl-next{
+        z-index:2000;
         width: 71px;
         height: 71px;
         @media (max-width: @extra-small) {
@@ -459,6 +462,7 @@
     top: 40%;
     transform: translateY(-50%);
     display: block !important;
+    z-index:5000;
     
 }
 .owl-nav{

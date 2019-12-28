@@ -98,11 +98,12 @@ $(document).ready(function(){
     });
     
     $('.vestido_carusel').owlCarousel({
-        autoplay:false,
-        nav:true,
-        autoplayTimeout:5000,
+        autoplay:true,
+        nav:false,
+        autoplayTimeout:6000,
         dots: false,
-        loop: false,
+        loop: true,
+        mouseDrag:false,
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
         responsive:{
             0:{

@@ -25,9 +25,6 @@ $(document).ready(function(){
     })
   }
 
-  if($('.vestido_carusel a').length){
-    var lightbox = $('.vestido_carusel a').simpleLightbox();
-  }
 
   $('#send-contact').click(function(e){
     e.preventDefault();
@@ -40,14 +37,30 @@ $(document).ready(function(){
       })
     }else{
       //send
+      Swal.fire({
+        icon: 'success',
+        title: 'Mensaje enviado',
+        text: 'Su mensaje fue enviado con exito'
+      })
      
     }
-    
   });
 
  if( $('.vestido').length){
    $('header').addClass('header--small');
    $('.slicknav_menu').addClass('slicknav_menu--dark');
+   
+
+   if(window.outerWidth > 425) {
  
- }
+      $(".img-zoom").ezPlus(
+        {
+          zoomType: 'lens',
+          lensShape: 'round',
+          lensSize: 200
+
+          
+        });
+    }
+}
 });

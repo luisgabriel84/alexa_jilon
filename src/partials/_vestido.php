@@ -24,8 +24,10 @@ $coleccionInfo = json_decode($json_coleccion);
     <div class="row__column-alexa alexa-photo ">
         <div class="vestido_carusel owl-carousel">
             <?php foreach($fotos_vestidos as $foto_vestido): ?>
-               <a href="<?php echo $foto_vestido ?>"> <img src="<?php echo $foto_vestido ?>" alt="<?php echo  $vestido[0]->title->rendered ?>" title="<?php echo  $vestido[0]->title->rendered ?>" class="responsive-img" id="foto-alexa"></a>
-            <?php endforeach; ?>
+                
+                <img src="<?php echo $foto_vestido ?>" alt="<?php echo  $vestido[0]->title->rendered ?>" title="<?php echo  $vestido[0]->title->rendered ?>" class="responsive-img img-zoom" id="foto-alexa" data-zoom-image="<?php echo $foto_vestido ?>">
+            
+               <?php endforeach; ?>
         </div>
         
     </div>
