@@ -99,7 +99,7 @@ $(document).ready(function(){
     
     $('.vestido_carusel').owlCarousel({
         autoplay:true,
-        nav:false,
+        nav:true,
         autoplayTimeout:6000,
         dots: false,
         loop: true,

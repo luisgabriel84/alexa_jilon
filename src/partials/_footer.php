@@ -2,7 +2,6 @@
                 <div class="footer-logo">
                   <a href="/">  <img src="img/logo_alexaJilon.png" alt=""></a>
                 </div>
-
                 <div class="row">
                     <div class="row__column-footer">
                        
@@ -24,15 +23,11 @@
                                 <h5>Sígueme</h5>
 
                             <ul>
-                                <li><i class="icon icon--facebook"></i><a href="https://www.facebook.com/AlexaJilonOficial/">@AlexaJilonOficial</a></li>
+                                <li><i class="icon icon--facebook"></i><a href="https://www.facebook.com/AlexaJilonOficial/" target="_blank">@AlexaJilonOficial</a></li>
                                 <li><i class="icon icon--instagram"></i><a href="https://www.instagram.com/alexajilonoficial/" target="_blank"> @alexajilonoficial</a></li>
                                 <li><i class="icon icon--pinterest"></i><a href="https://co.pinterest.com/alexajilonoficial/" target="_blank"> @alexajilonoficial</a></li>
                             </ul>
-
                         </div>
-
-
-
 
                     </div>
                     <div class="row__column-footer">
@@ -41,8 +36,8 @@
                                 <h5>Entérate de nuestras últimas colecciones y promociones. 
                                         Suscríbete</h5>
                             <div class="subscribe-form">
-                                <input type="text" placeholder="Escribe tu correo aquí">
-                                <button>Enviar</button>
+                                <input type="email" placeholder="Escribe tu correo aquí" id="email-subscribe">
+                                <button id="send-subscription">Enviar</button>
                             </div>
                         </div>
                     </div>

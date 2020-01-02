@@ -38,6 +38,8 @@ gulp.task('javascript', function() {
             path.join( './src/js/', 'carousels.js'),
             path.join( './src/js/', 'jquery.slicknav.min.js'),
             './src/js/navigation.js',
+            
+           
             './src/js/app.js',
 
         ])
@@ -82,12 +84,13 @@ gulp.task('watch', () => {
 
     //pages
     gulp.watch('src/partials/**/*.php', gulp.series('index'));
-    gulp.watch('src/partials/**/*.html', gulp.series('alexa'));
     gulp.watch('src/partials/**/*.php', gulp.series('alexa'));
     gulp.watch('src/partials/**/*.php', gulp.series('interna'));
     gulp.watch('src/partials/**/*.php', gulp.series('detail-page'));
     gulp.watch('src/partials/**/*.php', gulp.series('vestido'));
     gulp.watch('src/partials/**/*.php', gulp.series('contacto'));
+
+    gulp.watch('src/partials/**/*.php', gulp.series('send'));
     
 });
 
@@ -98,7 +101,7 @@ gulp.task('index', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_index.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('index.php'))
@@ -112,7 +115,7 @@ gulp.task('alexa', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_alexa.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('alexa-jilon.php'))
@@ -126,7 +129,7 @@ gulp.task('contacto', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_contacto.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('contacto.php'))
@@ -140,7 +143,7 @@ gulp.task('interna', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_business_line.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('lineas-alexa-jilon.php'))
@@ -154,7 +157,7 @@ gulp.task('detail-page', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_detail-page.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('coleccion.php'))
@@ -168,10 +171,21 @@ gulp.task('vestido', function() {
         './src/partials/_header.php',
         './src/partials/_top-navigation.php',
         './src/partials/_vestido.php',
-        './src/partials/_footer.html',
+        './src/partials/_footer.php',
         ])
         .pipe(plumber())
         .pipe(concat('vestido.php'))
+      
+        .pipe(gulp.dest(distFolder));
+});
+
+// Index
+gulp.task('send', function() {
+    return gulp.src([
+        './src/partials/send.php',
+        ])
+        .pipe(plumber())
+        .pipe(concat('send.php'))
       
         .pipe(gulp.dest(distFolder));
 });

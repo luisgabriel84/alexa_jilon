@@ -15,21 +15,28 @@ foreach($vestido[0]->acf as $key => $vestidof){
 $coleccion= sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories/%d',$vestido[0]->categories[0]);
 $json_coleccion = file_get_contents($coleccion);
 $coleccionInfo = json_decode($json_coleccion);
-
 ?>
 <meta property="og:title" content="<?php echo  $vestido[0]->title->rendered; ?>" />
 <meta property="og:image" content="http://www.alexajilon.femega.com/admin/wp-content/uploads/2019/12/03_InternadeProducto-texturas-croptopytanganegra-002.jpg" />
+
+
+
 
 <section class="alexa row vestido">
     <div class="row__column-alexa alexa-photo ">
         <div class="vestido_carusel owl-carousel">
             <?php foreach($fotos_vestidos as $foto_vestido): ?>
-                
-                <img src="<?php echo $foto_vestido ?>" alt="<?php echo  $vestido[0]->title->rendered ?>" title="<?php echo  $vestido[0]->title->rendered ?>" class="responsive-img img-zoom" id="foto-alexa" data-zoom-image="<?php echo $foto_vestido ?>">
-            
+                <div style="background-image:url(<?php echo $foto_vestido ?>);  background-size:cover; background-position:center">
+                    <div style="height:100vh; position:relative" class="vestido-holder">
+                   
+                    <a href="#" class="btn btn-primary open-link" id="open" data-imgurl="<?php echo $foto_vestido ?>" title="Expandir imágen"><i class="fa fa-expand" aria-hidden="true"></i></a>
+
+                    </div>
+                </div>
+
+
                <?php endforeach; ?>
         </div>
-        
     </div>
     <div class="row__column-alexa alexa-bio">
 
@@ -113,3 +120,15 @@ $coleccionInfo = json_decode($json_coleccion);
 
     </div>
 </section>
+
+
+
+<div id="popup" style="display: none;">
+                        <div class="content-popup">
+                            <div class="close"><a href="#" id="close">	&#10006;</a></div>
+                            <div class="popup-image">
+                                <img src="" class="zoomed-image"/>
+                            </div>
+                        </div>
+</div>
+<div class="popup-overlay"></div>

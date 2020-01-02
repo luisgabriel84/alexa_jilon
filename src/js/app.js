@@ -42,25 +42,46 @@ $(document).ready(function(){
         title: 'Mensaje enviado',
         text: 'Su mensaje fue enviado con exito'
       })
-     
     }
   });
-
  if( $('.vestido').length){
    $('header').addClass('header--small');
    $('.slicknav_menu').addClass('slicknav_menu--dark');
-   
-
-   if(window.outerWidth > 425) {
- 
-      $(".img-zoom").ezPlus(
-        {
-          zoomType: 'lens',
-          lensShape: 'round',
-          lensSize: 200
-
-          
-        });
-    }
 }
+$('.btn-primary').on('click', function(e){
+  e.preventDefault();
+  $('#popup').fadeIn('slow');
+  $('.popup-overlay').fadeIn('slow');
+  $('.zoomed-image').attr('src',this.dataset.imgurl);
+  $('.popup-overlay').height($(window).height());
+  return false;
+});
+
+$('#close').on('click', function(){
+  $('#popup').fadeOut('slow');
+  $('.popup-overlay').fadeOut('slow');
+  return false;
+});
+
+
+  $('#send-subscription').click(function(){
+
+    $.post('send.php',{ email: $('#email-subscribe').val() }, function( data ){
+      
+      var response = JSON.parse(data);
+      var iconAlert= 'error';
+      var title= "Error al enviar la subscripción";
+      if(response.error==0){
+        iconAlert= 'success';
+        title= "Subscrito satisfactoriamente";
+      }
+      Swal.fire({
+        icon: iconAlert,
+        title: title,
+        text: response.message
+      })
+    })
+
+
+  });
 });
