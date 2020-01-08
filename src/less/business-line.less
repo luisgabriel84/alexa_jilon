@@ -134,8 +134,8 @@
             background-color: @white;
             .carrousel-item{
               float:left;
-              width:25%;
-              padding: 2%;
+              width:33%;
+              padding: 1%;
 
              @media (max-width: @tablet) {
                 width:50%;
@@ -145,11 +145,20 @@
              }
 
               .collection-image{
-                  width: auto !important;
+                  width: 78% !important;
                   padding: 8% 4%;
                   @media (min-width: @computer) {
+                    width: 78% !important;
                     padding: 6% 4%;
                  }
+                 @media (max-width: @tablet) {
+                    width: 92% !important;
+                 }
+                  @media (max-width: @extra-small) {
+                    width: 88% !important;
+                 }
+
+
               }
             }
         }

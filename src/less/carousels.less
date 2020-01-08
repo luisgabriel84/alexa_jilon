@@ -7,8 +7,6 @@
         @media (min-width: @computer) {
             height: 100vh;
         }
-       
-
     }
     .collection-item{
 
@@ -326,18 +324,45 @@
         }
     
         .owl-next:focus, .owl-prev:focus {outline: none;}
-        .owl-prev { left: 3%; 
+        .owl-prev { 
+            left: 2%; 
             @media (max-width: @small) {
                 left: 9%;
             }
         }
         .owl-next { 
-            right: 3%;
+            right: 2%;
             @media (max-width: @small) {
                 right: 10%;
             }
         }
         .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+
+        .owl-dots{
+            position:absolute;
+            left:50%;
+            top:90%;
+            transform:translate(-50%,-90%);
+        
+        }
+        .owl-dot{
+            width:15px;
+            height:15px;
+            @media (max-width: @small) {
+                width:14px;
+                height:14px;
+            } 
+            border:1px solid @white !important;
+            background-color: @black !important;
+            border-radius: 10px;
+            margin:0 3px;
+            outline: none;
+            &.active{
+                background-color:@gold-1 !important;
+            }
+        
+        }
+
     }
 
 
@@ -482,4 +507,28 @@
     right: 0%; 
 }
 .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+.owl-dots{
+    position:absolute;
+    left:50%;
+    top:90%;
+    transform:translate(-50%,-90%);
+
+}
+.owl-dot{
+    width:15px;
+    height:15px;
+    @media (max-width: @small) {
+        width:14px;
+        height:14px;
+    } 
+    border:1px solid @white !important;
+    background-color: @black !important;
+    border-radius: 10px;
+    margin:0 3px;
+    outline: none;
+
+}
+.active{
+    background-color:@gold-1 !important;
+}
 }

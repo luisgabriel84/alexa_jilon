@@ -18,31 +18,38 @@ $(document).ready(function(){
     });
 
     $(".business-line-slider__carousel").owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
         nav:true,
         loop: true,
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
+        
         responsive:{
             0:{
                 items:1,
                 dotsEach: 2,
-               
+                dots:false,
             },
             600:{
                 items:2,
                 dotsEach: 2,
+                dots:false,
             },
             800:{
                 items:3,
                 dotsEach: 2,
+                dots:true,
             },
             1000:{
                 items:3,
                 dotsEach: 2,
+                dots:true,
                 
             },
             1200:{
                 items:4,
                 dotsEach: 2,
+                dots:true,
                 
             }
 
@@ -103,17 +110,17 @@ $(document).ready(function(){
     });
     
     $('.vestido_carusel').owlCarousel({
-        autoplay:true,
+        autoplay:false,
         nav:true,
         autoplayTimeout:6000,
-        dots: false,
+        dots: true,
         loop: true,
         mouseDrag:false,
         navText : ['<img src="img/left_03.jpg" />','<img src="img/right_03.jpg" />'],
         responsive:{
             0:{
                 items:1,
-               
+                nav:false,
                
             },
             600:{
