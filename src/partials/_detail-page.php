@@ -74,13 +74,13 @@ $colecciones = json_decode($json_colecciones);
 
             <div class="business-line__slider business-line__slider--white">
 
-                <div class="detail__carousel owl-carousel">
+             
 
                     <?php foreach($vestidos as $vestido): ?>
 
                     <div class="carrousel-item">
 
-                        <div class="business-line-slider__image">
+                        <div class="business-line-slider__image collection-image">
                             <a href="vestido.php?slug=<?php echo $vestido->slug ?>">
                                 <img src="<?php echo $vestido->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->medium->source_url ?>"
                                     alt="">
@@ -104,11 +104,11 @@ $colecciones = json_decode($json_colecciones);
 
 
 
-                </div>
+                
 
             </div>
         </section>
-
+        <div class="clear"></div>
         <section>
             <div class="business-line__collections">
 
@@ -132,3 +132,6 @@ $colecciones = json_decode($json_colecciones);
         </section>
     </div>
 </section>
+
+
+

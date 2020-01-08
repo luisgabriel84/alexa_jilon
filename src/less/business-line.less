@@ -132,6 +132,26 @@
         }
         &--white{
             background-color: @white;
+            .carrousel-item{
+              float:left;
+              width:25%;
+              padding: 2%;
+
+             @media (max-width: @tablet) {
+                width:50%;
+             }
+             @media (max-width: @extra-small) {
+                width:100%;
+             }
+
+              .collection-image{
+                  width: auto !important;
+                  padding: 8% 4%;
+                  @media (min-width: @computer) {
+                    padding: 6% 4%;
+                 }
+              }
+            }
         }
 
     }
