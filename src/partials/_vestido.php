@@ -26,8 +26,8 @@ $coleccionInfo = json_decode($json_coleccion);
     <div class="row__column-alexa alexa-photo ">
         <div class="vestido_carusel owl-carousel">
             <?php foreach($fotos_vestidos as $foto_vestido): ?>
-                <div style="background-image:url(<?php echo $foto_vestido ?>);  background-size:cover; background-position:center">
-                    <div style="height:100vh; position:relative" class="vestido-holder">
+                <div style="background-image:url(<?php echo $foto_vestido ?>);" class="vestido-bg">
+                    <div class="vestido-holder">
                    
                     <a href="#" class="btn btn-primary open-link" id="open" data-imgurl="<?php echo $foto_vestido ?>" title="Expandir imágen"><i class="fa fa-expand" aria-hidden="true"></i></a>
 

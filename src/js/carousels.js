@@ -36,6 +36,11 @@ $(document).ready(function(){
                 dotsEach: 2,
             },
             1000:{
+                items:3,
+                dotsEach: 2,
+                
+            },
+            1200:{
                 items:4,
                 dotsEach: 2,
                 
