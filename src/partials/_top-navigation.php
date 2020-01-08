@@ -13,15 +13,28 @@ $foto_menu = json_decode($fotoMenu);
 $arr= [];
 $subcats=[];
 
+$alternate=[];
+
 foreach($categories_all as $category){
   
     if($category->parent ==0 && $category->slug!='sin-categoria' && !isset($category->acf->quitar_del_menu[0]) ){
         $arr[$category->id] =  ['id'=>$category->id, 'name'=>$category->name,'slug'=>$category->slug,'parentid'=>$category->parent];
+  
     }
     else if( $category->slug!='sin-categoria') {
         $subcats[$category->parent][] =  ['id'=>$category->id, 'name'=>$category->name,'slug'=>$category->slug,'parentid'=>$category->parent];
+        if($category->id == $_GET['id']){
+            $parent = $category->parent; 
+        }
+        if($category->parent != $parent && $category->parent !=0 ){
+            if(count($alternate) <3){
+                $alternate[] = $category;
+            }
+        }
     }
 }
+
+
 $menu = "";
 foreach($arr as $main){
     $menu.="<ul>";

@@ -110,6 +110,15 @@ $colecciones = json_decode($json_colecciones);
         </section>
         <div class="clear"></div>
         <section>
+            <pre>
+            <?php 
+            
+            if(count($colecciones)<2){
+                $colecciones = array_merge($colecciones, $alternate);
+            }
+          
+            ?>
+            </pre>
             <div class="business-line__collections">
 
                 <?php foreach($colecciones as $coleccion): 
