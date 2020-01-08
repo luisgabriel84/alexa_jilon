@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web-server-alexa-gilon:
+  web-server-alexa-jilon:
     build: './Docker/Server/'
     container_name: alexa_jilon
 

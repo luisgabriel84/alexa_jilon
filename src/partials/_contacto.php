@@ -11,7 +11,7 @@ $contacto = json_decode($contacto_url);
         <div class="contact-carousel owl-carousel">
                 <?php foreach($contacto->acf as $key =>$foto): ?>
                         <?php if($foto->url): ?>
-                            <img src="<?php echo $foto->url; ?>" alt="" class="responsive-img">
+                            <img src="<?php echo $foto->url; ?>" alt="Show Room Alexa Jilon" title="Show Room Alexa Jilon" class="showroom-img-item">
                         <?php endif; ?>
 
                 <?php endforeach; ?>

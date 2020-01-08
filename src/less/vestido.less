@@ -5,13 +5,20 @@
     }
     &-bg{
         height:90vh; 
-
         position:relative;
         background-size: cover;
+        @media (max-width: @extra-small) {
+            height:53vh; 
+            background-size: contain;
+        }
     }
     &-holder{
         height:90vh; 
-        position:relative 
+        position:relative;
+        @media (max-width: @extra-small) {
+            height:54vh; 
+           
+        }
     }
     .alexa-photo {
         @media (max-width: @extra-small) {

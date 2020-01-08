@@ -28,12 +28,12 @@ $(document).ready(function(){
             0:{
                 items:1,
                 dotsEach: 2,
-                dots:false,
+                dots:true,
             },
             600:{
                 items:2,
                 dotsEach: 2,
-                dots:false,
+                dots:true,
             },
             800:{
                 items:3,

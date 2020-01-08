@@ -3,9 +3,7 @@
 $slider_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/homeslider');
 $json_slider = file_get_contents($slider_url);
 $slider_images = json_decode($json_slider);
-
 ?>
-
 <div class="home-slider owl-carousel" ">
     <?php foreach($slider_images as $image): ?>
     <div class="collection-item" style="background-image:url(<?php echo $image->acf->banner->url ?>)">

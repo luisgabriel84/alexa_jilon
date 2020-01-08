@@ -6,8 +6,8 @@ $alexa = json_decode($alexa_url);
     
 ?>
 <section class="alexa row">
-    <div class="row__column-alexa alexa-photo">
-        <img src="<?php echo $alexa->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->full->source_url ?>" alt="" class="responsive-img" id="foto-alexa">
+    <div class="row__column-alexa">
+        <img src="<?php echo $alexa->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->full->source_url ?>" alt="" class="showroom-img-item" >
     </div>
     <div class="row__column-alexa alexa-bio">
 
