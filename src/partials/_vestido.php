@@ -25,17 +25,20 @@ $coleccionInfo = json_decode($json_coleccion);
 <section class="alexa row vestido">
     <div class="row__column-alexa alexa-photo ">
         <div class="vestido_carusel owl-carousel">
-            <?php foreach($fotos_vestidos as $foto_vestido): ?>
+            <?php $i=0;
+            foreach($fotos_vestidos as $foto_vestido): ?>
                 <div style="background-image:url(<?php echo $foto_vestido ?>);" class="vestido-bg">
                     <div class="vestido-holder">
                    
-                    <a href="#" class="btn btn-primary open-link" id="open" data-imgurl="<?php echo $foto_vestido ?>" title="Expandir imágen"><i class="fa fa-expand" aria-hidden="true"></i></a>
+                    <a href="#" class="btn btn-primary open-link" id="open" data-current=<?php echo $i; ?> data-imgurl="<?php echo $foto_vestido ?>" title="Expandir imágen"><i class="fa fa-expand" aria-hidden="true"></i></a>
 
                     </div>
                 </div>
 
 
-               <?php endforeach; ?>
+               <?php 
+               $i++;
+            endforeach; ?>
         </div>
     </div>
     <div class="row__column-alexa alexa-bio">
@@ -125,10 +128,20 @@ $coleccionInfo = json_decode($json_coleccion);
 
 <div id="popup" style="display: none;">
                         <div class="content-popup">
+                            <div class="gal-nav">
+                                <a href="" class="gal-prev">
+                                    <img src="img/left_03.jpg">
+                                </a>
+                                <a href="" class="gal-next">
+                                    <img src="img/right_03.jpg">
+                                </a>
+                            </div>
+                          
                             <div class="close"><a href="#" id="close">	&#10006;</a></div>
                             <div class="popup-image">
-                                <img src="" class="zoomed-image"/>
+                                <img src="" class="zoomed-image" data-current=0/>
                             </div>
+                           
                         </div>
 </div>
 <div class="popup-overlay"></div>

@@ -48,14 +48,45 @@ $(document).ready(function(){
    $('header').addClass('header--small');
    $('.slicknav_menu').addClass('slicknav_menu--dark');
 }
+
+  var vestido_items = Array.from($('.vestido_carusel .owl-item').not('.cloned').find('a'));
+  var images = new Array();
+  for(var i =0; i<vestido_items.length; i++){
+    images.push(vestido_items[i].dataset.imgurl);
+  }
+
+  
+
 $('.btn-primary').on('click', function(e){
   e.preventDefault();
   $('#popup').fadeIn('slow');
   $('.popup-overlay').fadeIn('slow');
   $('.zoomed-image').attr('src',this.dataset.imgurl);
+
   $('.popup-overlay').height($(window).height());
   return false;
 });
+$('.gal-nav a').on('click',function(e){
+
+    e.preventDefault();
+    var currentPicture = parseInt($('.zoomed-image').attr('data-current'));
+    if( $(this).attr("class")=='gal-next'){
+      console.log(currentPicture);
+      if(currentPicture+1 < images.length){
+        
+        $('.zoomed-image').attr('src', images[currentPicture+1]);
+        $('.zoomed-image').attr('data-current',currentPicture+1);
+      }
+    }
+    if( $(this).attr("class")=='gal-prev'){
+      if (currentPicture-1 > -1) {
+        $('.zoomed-image').attr('src', images[currentPicture-1]);
+        $('.zoomed-image').attr('data-current',currentPicture-1);
+      }
+    }
+      $('.zoomed-image').data('current')
+   // $('.zoomed-image').attr('src',images);
+})
 
 $('#close').on('click', function(){
   $('#popup').fadeOut('slow');

@@ -139,3 +139,34 @@ header{
         width: 100%;
     }
 }
+.gal-nav {
+    position: fixed;
+    top: 50%;
+    transform: translate(0px, -50%);
+    width: 100%;
+    .gal-next{
+        right: 1%;
+        position: absolute;
+
+        @media screen and (max-width: @tablet) {
+            right: 2%;
+        }
+        @media screen and (max-width:  @extra-small) {
+            right: 4%;
+        }
+
+
+    }
+    img{
+
+
+        @media screen and (max-width: @tablet) {
+            width: 70px;
+        }
+        @media screen and (max-width: @extra-small) {
+            width: 40px;
+        }
+    }
+}
+
+   
