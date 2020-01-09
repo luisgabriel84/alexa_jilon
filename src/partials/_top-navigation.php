@@ -24,10 +24,10 @@ foreach($categories_all as $category){
     else if( $category->slug!='sin-categoria') {
         $subcats[$category->parent][] =  ['id'=>$category->id, 'name'=>$category->name,'slug'=>$category->slug,'parentid'=>$category->parent];
         if($category->id == $_GET['id']){
-            $parent = $category->parent; 
+            $parent = $category->parent;
         }
         if($category->parent != $parent && $category->parent !=0 ){
-            if(count($alternate) <3){
+            if(count($alternate) < 1){
                 $alternate[] = $category;
             }
         }
