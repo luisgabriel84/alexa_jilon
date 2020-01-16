@@ -12,7 +12,7 @@
                                 <li><i class="icon icon--pin"></i><a href="https://maps.google.com/?q=Cra.+85+%2345-66%2C+Cali%2C+Valle+del+Cauca&ftid=0x8e30a116f604e0c9:0xba867e5ab2a1e2b6" target="_blank">Alexa Jilon Show Room Cali | Google Maps</a></li>
                                 <li><i class="icon icon--phone"></i> (57-2)3432035</li>
                                 <li><i class="icon icon--phone"></i> 310 4408034</li>
-                                <li><i class="icon icon--address"></i> Cra 85E $ 45 -66 TC Ap 510 - Brisas de San Lorenzo</li>
+                                <li><i class="icon icon--address"></i> Cra 85E # 45-66 TC Apto 510 - Brisas de San Lorenzo</li>
                                 <li><i class="icon icon--email"></i> info@alexajilon.com</li>
                             </ul>
                         </div>

@@ -99,13 +99,6 @@ $colecciones = json_decode($json_colecciones);
 
                     </div>
                     <?php endforeach; ?>
-
-
-
-
-
-                
-
             </div>
         </section>
         <div class="clear"></div>
