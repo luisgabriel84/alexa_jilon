@@ -1,7 +1,7 @@
 
 <?php
 $vestido_slug = $_GET['slug'];
-$vestido_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
+$vestido_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
 $json_vestido = file_get_contents($vestido_url);
 $vestido = json_decode($json_vestido);
 $fotos_vestidos =[];
@@ -12,12 +12,12 @@ foreach($vestido[0]->acf as $key => $vestidof){
     }
 }
 
-$coleccion= sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories/%d',$vestido[0]->categories[0]);
+$coleccion= sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories/%d',$vestido[0]->categories[0]);
 $json_coleccion = file_get_contents($coleccion);
 $coleccionInfo = json_decode($json_coleccion);
 ?>
 <meta property="og:title" content="<?php echo  $vestido[0]->title->rendered; ?>" />
-<meta property="og:image" content="http://www.alexajilon.femega.com/admin/wp-content/uploads/2019/12/03_InternadeProducto-texturas-croptopytanganegra-002.jpg" />
+<meta property="og:image" content="http://admin.alexajilon.com/wp-content/uploads/2019/12/03_InternadeProducto-texturas-croptopytanganegra-002.jpg" />
 
 
 
@@ -93,7 +93,7 @@ $coleccionInfo = json_decode($json_coleccion);
 
             <?php
                
-                $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s',$vestido[0]->categories[0]));
+                $json = file_get_contents(sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&categories=%s',$vestido[0]->categories[0]));
                 $posts = json_decode($json);
             ?>
             <?php foreach($posts as $post):?>

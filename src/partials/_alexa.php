@@ -1,6 +1,6 @@
 <?php 
 
-$url = 'http://www.alexajilon.femega.com/admin/wp-json/wp/v2/pages/52?_embed';
+$url = 'http://admin.alexajilon.com/wp-json/wp/v2/pages/52?_embed';
 $alexa_url = file_get_contents($url);
 $alexa = json_decode($alexa_url);
     
@@ -22,6 +22,5 @@ $alexa = json_decode($alexa_url);
                 <a href="https://www.instagram.com/alexajilonoficial/" target="_blank"><i class="icon icon--instagram--white"></i></a>
                 <a href="https://co.pinterest.com/alexajilonoficial/" target="_blank"><i class="icon icon--pinterest--white"></i></a>
         </div>
-
     </div>
 </section>

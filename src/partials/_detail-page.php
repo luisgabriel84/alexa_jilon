@@ -5,21 +5,21 @@ $id =  $_GET['id'];
 $linea =  $_GET['linea'];
 
 
-$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$coleccion);
+$url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?slug=%s',$coleccion);
 $json = file_get_contents($url);
 $coleccion_json = json_decode($json);
 
 
-$parent = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories/%d',$coleccion_json[0]->parent);
+$parent = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories/%d',$coleccion_json[0]->parent);
 $parent_json = file_get_contents($parent);
 $parent = json_decode($parent_json);
 
 
-$vestidos_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%d',$id);
+$vestidos_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&categories=%d',$id);
 $json_vestidos = file_get_contents($vestidos_url);
 $vestidos = json_decode($json_vestidos);
 
-$colecciones_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%s',$coleccion_json[0]->parent);
+$colecciones_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?parent=%s',$coleccion_json[0]->parent);
 $json_colecciones = file_get_contents($colecciones_url);
 $colecciones = json_decode($json_colecciones);
 

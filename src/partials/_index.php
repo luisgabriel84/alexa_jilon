@@ -1,6 +1,6 @@
 <?php
 
-$slider_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/homeslider');
+$slider_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/homeslider');
 $json_slider = file_get_contents($slider_url);
 $slider_images = json_decode($json_slider);
 ?>
@@ -27,7 +27,7 @@ $slider_images = json_decode($json_slider);
 <div id="home-main-content">
     
 <?php 
-$json = file_get_contents('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=0');
+$json = file_get_contents('http://admin.alexajilon.com/wp-json/wp/v2/categories?parent=0');
 $obj = json_decode($json);
 
 usort($obj, function($a, $b) {
@@ -77,14 +77,14 @@ usort($obj, function($a, $b) {
 
                <?php
               
-               $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%d',$category->id));
+               $json = file_get_contents(sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?parent=%d',$category->id));
                $obj = json_decode($json);
                $cats =[];
                foreach($obj as $cat){
                 $cats[] =$cat->id;
                }
                $strCat = implode (",", $cats);
-               $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s&per_page=20&order=asc',$strCat));
+               $json = file_get_contents(sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&categories=%s&per_page=20&order=asc',$strCat));
                $posts = json_decode($json);
            
             

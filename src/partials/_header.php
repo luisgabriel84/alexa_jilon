@@ -23,7 +23,7 @@
 
     <?php if($file=="vestido.php" ): 
         $vestido_slug = $_GET['slug'];
-        $vestido_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
+        $vestido_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&slug=%s',$vestido_slug);
         $json_vestido = file_get_contents($vestido_url);
         $vestido = json_decode($json_vestido);    
         

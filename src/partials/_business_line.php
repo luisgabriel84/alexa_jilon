@@ -3,11 +3,11 @@
 $linea_slug = $_GET['linea'];
 $id =  $_GET['id'];
 
-$url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?slug=%s',$linea_slug);
+$url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?slug=%s',$linea_slug);
 $json = file_get_contents($url);
 $linea = json_decode($json);
 
-$colecciones_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?parent=%s',$id);
+$colecciones_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?parent=%s',$id);
 $json_colecciones = file_get_contents($colecciones_url);
 $colecciones = json_decode($json_colecciones);
 ?>
@@ -56,7 +56,7 @@ $colecciones = json_decode($json_colecciones);
             
            
             $strCat = implode (",", $cats);
-            $json = file_get_contents(sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?_embed&categories=%s',$strCat));
+            $json = file_get_contents(sprintf('http://admin.alexajilon.com/wp-json/wp/v2/posts?_embed&categories=%s',$strCat));
             $posts = json_decode($json);
             ?>
 

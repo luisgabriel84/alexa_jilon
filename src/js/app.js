@@ -13,7 +13,7 @@ $(document).ready(function(){
   }
   if($('#sel_coleccion').length){
     $('#sel_coleccion').change(function(){
-      var url = `http://www.alexajilon.femega.com/admin/wp-json/wp/v2/posts?categories=${ $(this).val()}`;
+      var url = `http://admin.alexajilon.com/wp-json/wp/v2/posts?categories=${ $(this).val()}`;
       fetch(url)
       .then(function(response) {
         return response.json();

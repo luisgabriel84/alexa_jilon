@@ -1,10 +1,10 @@
 <?php
-$menu_categories_url = sprintf('http://www.alexajilon.femega.com/admin/wp-json/wp/v2/categories?per_page=50');
+$menu_categories_url = sprintf('http://admin.alexajilon.com/wp-json/wp/v2/categories?per_page=50');
 $categories = file_get_contents($menu_categories_url);
 $categories_all = json_decode($categories);
 
 
-$foto_menu_url = 'http://www.alexajilon.femega.com/admin/wp-json/wp/v2/fotomenu/585';
+$foto_menu_url = 'http://admin.alexajilon.com/wp-json/wp/v2/fotomenu/585';
 $fotoMenu = file_get_contents($foto_menu_url);
 $foto_menu = json_decode($fotoMenu);
 

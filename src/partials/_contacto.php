@@ -1,5 +1,5 @@
 <?php
-$url = 'http://www.alexajilon.femega.com/admin/wp-json/wp/v2/pages/572';
+$url = 'http://admin.alexajilon.com/wp-json/wp/v2/pages/572';
 $contacto_url = file_get_contents($url);
 $contacto = json_decode($contacto_url);
 
