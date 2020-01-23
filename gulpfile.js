@@ -91,6 +91,7 @@ gulp.task('watch', () => {
     gulp.watch('src/partials/**/*.php', gulp.series('contacto'));
 
     gulp.watch('src/partials/**/*.php', gulp.series('send'));
+    gulp.watch('src/partials/**/*.php', gulp.series('sendemail'));
     
 });
 
@@ -179,13 +180,23 @@ gulp.task('vestido', function() {
         .pipe(gulp.dest(distFolder));
 });
 
-// Index
+// send newsletter
 gulp.task('send', function() {
     return gulp.src([
         './src/partials/send.php',
         ])
         .pipe(plumber())
         .pipe(concat('send.php'))
+      
+        .pipe(gulp.dest(distFolder));
+});
+
+gulp.task('sendemail', function() {
+    return gulp.src([
+        './src/partials/sendemail.php',
+        ])
+        .pipe(plumber())
+        .pipe(concat('sendemail.php'))
       
         .pipe(gulp.dest(distFolder));
 });

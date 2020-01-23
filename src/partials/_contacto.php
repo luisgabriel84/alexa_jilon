@@ -24,9 +24,9 @@ $contacto = json_decode($contacto_url);
             Quieres conocer nuestras últimas colecciones y promociones, contáctanos!
             <div class="form">
                 <form action="contacto.php" id="contact-form">
-                    <div><input type="text" placeholder="Nombres y apellidos" required name="nombres"></div>
-                    <div><input type="text" placeholder="Celular*" name="celular"></div>
-                    <div><input type="email" placeholder="Correo electrónico*" class="required" name="correo"></div>
+                    <div><input type="text" placeholder="Nombres y apellidos" required name="nombres" id="full-name"></div>
+                    <div><input type="text" placeholder="Celular*" name="celular" id="celular"></div>
+                    <div><input type="email" placeholder="Correo electrónico*" class="required" name="correo" id="correo"></div>
                     <div>
                         <select name="coleccion" id="sel_coleccion" required name="coleccion">
                         <option value="">Seleccione la línea</option>
@@ -37,7 +37,7 @@ $contacto = json_decode($contacto_url);
                         </select>
                     </div>
                     <div>
-                        <select name="producto" id="sel_producto" required name="producto">
+                        <select name="producto" id="sel_producto" name="producto">
                         <option value="">Producto</option>
                         </select>
                     </div>
@@ -45,7 +45,7 @@ $contacto = json_decode($contacto_url);
                         <textarea name="mensaje" id="mensaje" cols="30" rows="4" placeholder="Mensaje" required></textarea>
                     </div>
                     <div>
-                        <input type="checkbox"> <label for="">*Acepto y atorizo el tratamiento de datos personales</label>
+                        <input type="checkbox" id="politicas_tratamiento"> <label for="">*Acepto y atorizo el tratamiento de datos personales</label>
                     </div>
                     
                     <div class="form__send-button">

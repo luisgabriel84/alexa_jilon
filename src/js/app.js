@@ -28,22 +28,53 @@ $(document).ready(function(){
 
   $('#send-contact').click(function(e){
     e.preventDefault();
+    if(!$('#politicas_tratamiento').prop('checked')){
+      Swal.fire({
+        icon: 'error',
+        title: 'Acepta la políticas',
+        text: 'Debes aceptar la política de tratamiento de datos personales'
+      });
+      return;
+    }
+
     if(!$("#contact-form").valid()){
       //error
       Swal.fire({
         icon: 'error',
         title: 'Error al enviar mensaje',
         text: 'Corrige los campos seleccionados'
-      })
-    }else{
-      //send
-      Swal.fire({
-        icon: 'success',
-        title: 'Mensaje enviado',
-        text: 'Su mensaje fue enviado con exito'
-      })
+      });
+      return
     }
+
+    $.post('sendemail.php',{ 
+      nombres: $('#full-name').val(),
+      celular: $('#celular').val(),
+      email: $('#correo').val(),
+      linea: $("#sel_coleccion option:selected" ).text(),
+      producto: $("#sel_producto option:selected" ).text(),
+      mensaje: $('#mensaje').val()
+    }, function( data ){
+      var result = JSON.parse(data);
+      console.log(result);
+      if(!result.error){
+        Swal.fire({
+          icon: 'success',
+          title: 'Mensaje enviado',
+          text: result.message
+        })
+        $("#contact-form")[0].reset();
+      }else{
+         //error
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al enviar mensaje',
+          text:  result.message
+        })
+      }
+    });
   });
+
  if( $('.vestido').length){
    $('header').addClass('header--small');
    $('.slicknav_menu').addClass('slicknav_menu--dark');
