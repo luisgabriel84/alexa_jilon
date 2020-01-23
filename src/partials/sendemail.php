@@ -20,10 +20,10 @@ require('PHPMailer/PHPMailerAutoload.php');
             $mail->FromName = "Alexa Jilon";                          
         
             //Recipients
-            //$mail->setFrom('suscripcionalexajilon@gmail.com', 'Alexa Jilon');
-            $mail->addAddress('prueba-alexa@mailinator.com', 'User');   
-            //$mail->addAddress('suscripcionalexajilon@gmail.com', 'User'); 
-            //$mail->addAddress('consultor@femega.com', 'User');   
+            $mail->setFrom('info@alexajilon.com', 'Alexa Jilon');
+            //$mail->addAddress('prueba-alexa@mailinator.com', 'User');   
+            $mail->addAddress('suscripcionalexajilon@gmail.com', 'User'); 
+            $mail->addAddress('consultor@femega.com', 'User');   
             
 
             $mail->CharSet = 'UTF-8';

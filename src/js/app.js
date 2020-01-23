@@ -56,7 +56,6 @@ $(document).ready(function(){
       mensaje: $('#mensaje').val()
     }, function( data ){
       var result = JSON.parse(data);
-      console.log(result);
       if(!result.error){
         Swal.fire({
           icon: 'success',
